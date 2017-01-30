@@ -15,7 +15,7 @@ GameObject:
   - 95: {fileID: 9500000}
   - 212: {fileID: 212000011307632938}
   m_Layer: 10
-  m_Name: enemy1
+  m_Name: Megaman
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

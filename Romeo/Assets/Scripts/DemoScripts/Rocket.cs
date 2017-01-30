@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Rocket : MonoBehaviour 
 {
+    public int damageModifier;
 	public GameObject explosion;		// Prefab of explosion effect.
 
 
@@ -28,7 +29,7 @@ public class Rocket : MonoBehaviour
 		if(col.tag == "Enemy")
 		{
 			// ... find the Enemy script and call the Hurt function.
-			col.gameObject.GetComponent<Enemy>().Hurt();
+			col.gameObject.GetComponent<Enemy>().Hurt(damageModifier);
 
 			// Call the explosion instantiation.
 			OnExplode();

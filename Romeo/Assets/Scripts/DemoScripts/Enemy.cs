@@ -58,10 +58,10 @@ public class Enemy : MonoBehaviour
 			Death ();
 	}
 	
-	public void Hurt()
+	public void Hurt(int hurtAmount)
 	{
 		// Reduce the number of hit points by one.
-		HP--;
+		HP -= hurtAmount;
 	}
 	
 	void Death()
