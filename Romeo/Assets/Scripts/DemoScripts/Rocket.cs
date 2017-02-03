@@ -35,7 +35,7 @@ public class Rocket : MonoBehaviour
 			OnExplode();
 
 			// Destroy the rocket.
-			Destroy (gameObject);
+			if (damageModifier < 3) Destroy (gameObject);
 		}
 		// Otherwise if it hits a bomb crate...
 		else if(col.tag == "BombPickup")
@@ -46,15 +46,15 @@ public class Rocket : MonoBehaviour
 			// Destroy the bomb crate.
 			Destroy (col.transform.root.gameObject);
 
-			// Destroy the rocket.
-			Destroy (gameObject);
+            // Destroy the rocket.
+            if (damageModifier < 3) Destroy(gameObject);
 		}
 		// Otherwise if the player manages to shoot himself...
 		else if(col.gameObject.tag != "Player")
 		{
 			// Instantiate the explosion and destroy the rocket.
 			OnExplode();
-			Destroy (gameObject);
+            if (damageModifier < 3) Destroy(gameObject);
 		}
 	}
 }
