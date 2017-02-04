@@ -1,0 +1,1879 @@
+fileFormatVersion: 2
+guid: eecfa74f303467f4bbc99294166a3f69
+timeCreated: 1485641464
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: x6sigma1_0
+    21300002: x6sigma1_1
+    21300004: x6sigma1_2
+    21300006: x6sigma1_3
+    21300008: x6sigma1_4
+    21300010: x6sigma1_5
+    21300012: x6sigma1_6
+    21300014: x6sigma1_7
+    21300016: x6sigma1_8
+    21300018: x6sigma1_9
+    21300020: x6sigma1_10
+    21300022: x6sigma1_11
+    21300024: x6sigma1_12
+    21300026: x6sigma1_13
+    21300028: x6sigma1_14
+    21300030: x6sigma1_15
+    21300032: x6sigma1_16
+    21300034: x6sigma1_17
+    21300036: x6sigma1_18
+    21300038: x6sigma1_19
+    21300040: x6sigma1_20
+    21300042: x6sigma1_21
+    21300044: x6sigma1_22
+    21300046: x6sigma1_23
+    21300048: x6sigma1_24
+    21300050: x6sigma1_25
+    21300052: x6sigma1_26
+    21300054: x6sigma1_27
+    21300056: x6sigma1_28
+    21300058: x6sigma1_29
+    21300060: x6sigma1_30
+    21300062: x6sigma1_31
+    21300064: x6sigma1_32
+    21300066: x6sigma1_33
+    21300068: x6sigma1_34
+    21300070: x6sigma1_35
+    21300072: x6sigma1_36
+    21300074: x6sigma1_37
+    21300076: x6sigma1_38
+    21300078: x6sigma1_39
+    21300080: x6sigma1_40
+    21300082: x6sigma1_41
+    21300084: x6sigma1_42
+    21300086: x6sigma1_43
+    21300088: x6sigma1_44
+    21300090: x6sigma1_45
+    21300092: x6sigma1_46
+    21300094: x6sigma1_47
+    21300096: x6sigma1_48
+    21300098: x6sigma1_49
+    21300100: x6sigma1_50
+    21300102: x6sigma1_51
+    21300104: x6sigma1_52
+    21300106: x6sigma1_53
+    21300108: x6sigma1_54
+    21300110: x6sigma1_55
+    21300112: x6sigma1_56
+    21300114: x6sigma1_57
+    21300116: x6sigma1_58
+    21300118: x6sigma1_59
+    21300120: x6sigma1_60
+    21300122: x6sigma1_61
+    21300124: x6sigma1_62
+    21300126: x6sigma1_63
+    21300128: x6sigma1_64
+    21300130: x6sigma1_65
+    21300132: x6sigma1_66
+    21300134: x6sigma1_67
+    21300136: x6sigma1_68
+    21300138: x6sigma1_69
+    21300140: x6sigma1_70
+    21300142: x6sigma1_71
+    21300144: x6sigma1_72
+    21300146: x6sigma1_73
+    21300148: x6sigma1_74
+    21300150: x6sigma1_75
+    21300152: x6sigma1_76
+    21300154: x6sigma1_77
+    21300156: x6sigma1_78
+    21300158: x6sigma1_79
+    21300160: x6sigma1_80
+    21300162: x6sigma1_81
+    21300164: x6sigma1_82
+    21300166: x6sigma1_83
+    21300168: x6sigma1_84
+    21300170: x6sigma1_85
+    21300172: x6sigma1_86
+    21300174: x6sigma1_87
+    21300176: x6sigma1_88
+    21300178: x6sigma1_89
+    21300180: x6sigma1_90
+    21300182: x6sigma1_91
+    21300184: x6sigma1_92
+    21300186: x6sigma1_93
+    21300188: x6sigma1_94
+    21300190: x6sigma1_95
+    21300192: x6sigma1_96
+    21300194: x6sigma1_97
+    21300196: x6sigma1_98
+    21300198: x6sigma1_99
+    21300200: x6sigma1_100
+    21300202: x6sigma1_101
+    21300204: x6sigma1_102
+    21300206: x6sigma1_103
+    21300208: x6sigma1_104
+    21300210: x6sigma1_105
+    21300212: x6sigma1_106
+    21300214: x6sigma1_107
+    21300216: x6sigma1_108
+    21300218: x6sigma1_109
+    21300220: x6sigma1_110
+    21300222: x6sigma1_111
+    21300224: x6sigma1_112
+    21300226: x6sigma1_113
+    21300228: x6sigma1_114
+    21300230: x6sigma1_115
+    21300232: x6sigma1_116
+    21300234: x6sigma1_117
+    21300236: x6sigma1_118
+    21300238: x6sigma1_119
+    21300240: x6sigma1_120
+    21300242: x6sigma1_121
+    21300244: x6sigma1_122
+    21300246: x6sigma1_123
+    21300248: x6sigma1_124
+    21300250: x6sigma1_125
+    21300252: x6sigma1_126
+    21300254: x6sigma1_127
+    21300256: x6sigma1_128
+    21300258: x6sigma1_129
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: x6sigma1_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1289
+        width: 85
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_1
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1287
+        width: 82
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1286
+        width: 79
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_3
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1284
+        width: 79
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_4
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 1283
+        width: 79
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_5
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 1346
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_6
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 1347
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_7
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 1347
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_8
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 1347
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_9
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 1319
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_10
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 1320
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_11
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 1319
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_12
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1320
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_13
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 1294
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_14
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 1296
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_15
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1297
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_16
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 1297
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_17
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1222
+        width: 111
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_18
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 1225
+        width: 105
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_19
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 1207
+        width: 101
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_20
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 1205
+        width: 91
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_21
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1196
+        width: 85
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_22
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1127
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_23
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1123
+        width: 79
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_24
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 1121
+        width: 83
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_25
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1119
+        width: 75
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_26
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 1116
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_27
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 1152
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_28
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 1148
+        width: 16
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_29
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1148
+        width: 22
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_30
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 1095
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_31
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1092
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_32
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 1090
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_33
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1076
+        width: 40
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_34
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1062
+        width: 27
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_35
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 1095
+        width: 20
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_36
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1098
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_37
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 1094
+        width: 15
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_38
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 1081
+        width: 50
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_39
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 1069
+        width: 48
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_40
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1012
+        width: 92
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_41
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1009
+        width: 92
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_42
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 1007
+        width: 90
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_43
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 1024
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_44
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1022
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_45
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 1028
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_46
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 1029
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_47
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1024
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_48
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 1019
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_49
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 981
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_50
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 980
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_51
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 979
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_52
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 988
+        width: 52
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_53
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 980
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_54
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 976
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_55
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 963
+        width: 20
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_56
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 891
+        width: 85
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_57
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 888
+        width: 101
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_58
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 906
+        width: 78
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_59
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 906
+        width: 78
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_60
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 871
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_61
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 814
+        width: 101
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_62
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 860
+        width: 37
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_63
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 861
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_64
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 865
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_65
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 852
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_66
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 737
+        width: 101
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_67
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 737
+        width: 105
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_68
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 733
+        width: 108
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_69
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 734
+        width: 91
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_70
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 737
+        width: 85
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_71
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 734
+        width: 92
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_72
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 636
+        width: 79
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_73
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 637
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_74
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 636
+        width: 80
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_75
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 636
+        width: 79
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_76
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 637
+        width: 92
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_77
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 640
+        width: 92
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_78
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 552
+        width: 90
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_79
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 550
+        width: 79
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_80
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 549
+        width: 83
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_81
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 551
+        width: 86
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_82
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 552
+        width: 85
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_83
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 549
+        width: 86
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_84
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 465
+        width: 105
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_85
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 465
+        width: 104
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_86
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 459
+        width: 79
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_87
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 460
+        width: 92
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_88
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 462
+        width: 105
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_89
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 450
+        width: 98
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_90
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 347
+        width: 96
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_91
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 349
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_92
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 425
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_93
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 418
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_94
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 328
+        width: 46
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_95
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 323
+        width: 46
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_96
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 323
+        width: 46
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_97
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 277
+        width: 64
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_98
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 274
+        width: 46
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_99
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 268
+        width: 64
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_100
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 404
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_101
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 396
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_102
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 385
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_103
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 369
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_104
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 361
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_105
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 333
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_106
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 146
+        width: 45
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_107
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 147
+        width: 46
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_108
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 145
+        width: 46
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_109
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 146
+        width: 44
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_110
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 145
+        width: 46
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_111
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 144
+        width: 44
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_112
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 142
+        width: 44
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_113
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 143
+        width: 44
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_114
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 142
+        width: 45
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_115
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 215
+        width: 49
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_116
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 215
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_117
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 215
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_118
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 215
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_119
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 139
+        width: 24
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_120
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 133
+        width: 16
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_121
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 15
+        width: 30
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_122
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 2
+        width: 55
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_123
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1
+        width: 51
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_124
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 0
+        width: 54
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_125
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 103
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_126
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 0
+        width: 51
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_127
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 71
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_128
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 43
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: x6sigma1_129
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 11
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
