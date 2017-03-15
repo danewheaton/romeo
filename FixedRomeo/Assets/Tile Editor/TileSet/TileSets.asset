@@ -20,19 +20,19 @@ MonoBehaviour:
     FlipHorizontally: 0
     FlipVertically: 0
     OrderInLayer: 0
-    Tag: 556e746167676564
+    Tag: Untagged
   TileSets:
   - Name: 536574
     TileList:
     - Sprite: {fileID: 21300002, guid: 8cb5a665754e67c40ada08ca5594cf88, type: 3}
       Collision: 0
-      PhysicsMaterial: {fileID: 0}
+      PhysicsMaterial: {fileID: 6200000, guid: 5f9c37fb361d64b788498991d3de93d7, type: 2}
       IsTrigger: 0
       Rotation: 0
       FlipHorizontally: 0
       FlipVertically: 0
       OrderInLayer: 0
-      Tag: 556e746167676564
+      Tag: Untagged
     - Sprite: {fileID: 21300004, guid: 8cb5a665754e67c40ada08ca5594cf88, type: 3}
       Collision: 0
       PhysicsMaterial: {fileID: 0}
@@ -1816,14 +1816,14 @@ MonoBehaviour:
       OrderInLayer: 0
       Tag: 556e746167676564
     - Sprite: {fileID: 21300400, guid: 8cb5a665754e67c40ada08ca5594cf88, type: 3}
-      Collision: 0
-      PhysicsMaterial: {fileID: 0}
+      Collision: 1
+      PhysicsMaterial: {fileID: 6200000, guid: 5f9c37fb361d64b788498991d3de93d7, type: 2}
       IsTrigger: 0
       Rotation: 0
       FlipHorizontally: 0
       FlipVertically: 0
       OrderInLayer: 0
-      Tag: 556e746167676564
+      Tag: Untagged
     - Sprite: {fileID: 21300402, guid: 8cb5a665754e67c40ada08ca5594cf88, type: 3}
       Collision: 0
       PhysicsMaterial: {fileID: 0}
@@ -1834,14 +1834,14 @@ MonoBehaviour:
       OrderInLayer: 0
       Tag: 556e746167676564
     - Sprite: {fileID: 21300404, guid: 8cb5a665754e67c40ada08ca5594cf88, type: 3}
-      Collision: 0
-      PhysicsMaterial: {fileID: 0}
+      Collision: 1
+      PhysicsMaterial: {fileID: 6200000, guid: 5f9c37fb361d64b788498991d3de93d7, type: 2}
       IsTrigger: 0
       Rotation: 0
       FlipHorizontally: 0
       FlipVertically: 0
       OrderInLayer: 0
-      Tag: 556e746167676564
+      Tag: Untagged
     - Sprite: {fileID: 21300406, guid: 8cb5a665754e67c40ada08ca5594cf88, type: 3}
       Collision: 0
       PhysicsMaterial: {fileID: 0}
@@ -1913,7 +1913,7 @@ MonoBehaviour:
       FlipHorizontally: 0
       FlipVertically: 0
       OrderInLayer: 0
-      Tag: 556e746167676564
+      Tag: Untagged
     - Sprite: {fileID: 21300422, guid: 8cb5a665754e67c40ada08ca5594cf88, type: 3}
       Collision: 0
       PhysicsMaterial: {fileID: 0}

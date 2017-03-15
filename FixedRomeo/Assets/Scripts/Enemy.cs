@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
         
 		foreach(Collider2D c in frontHits)
 		{
-			if(c.tag == "Obstacle")
+			if(c.tag != "Player")
 			{
 				Flip ();
 				break;

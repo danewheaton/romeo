@@ -3,28 +3,21 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour
 {
-	public float spawnTime = 5f;		// The amount of time between each spawn.
-	public float spawnDelay = 3f;		// The amount of time before spawning starts.
-	public GameObject[] enemies;		// Array of enemy prefabs.
+	public float spawnTime = 5;
+	public float spawnDelayMin = 1, spawnDelayMax = 3;
+	public GameObject[] enemies;
 
 
 	void Start ()
 	{
-		// Start calling the Spawn function repeatedly after a delay .
-		InvokeRepeating("Spawn", spawnDelay, spawnTime);
+		InvokeRepeating("Spawn", Random.Range(spawnDelayMin * 100, spawnDelayMax * 100) / 100, Random.Range(spawnDelayMin * 100, spawnDelayMax * 100) / 100);
 	}
 
 
 	void Spawn ()
 	{
-		// Instantiate a random enemy.
 		int enemyIndex = Random.Range(0, enemies.Length);
-		Instantiate(enemies[enemyIndex], transform.position, transform.rotation);
-
-		// Play the spawning effect from all of the particle systems.
-		foreach(ParticleSystem p in GetComponentsInChildren<ParticleSystem>())
-		{
-			p.Play();
-		}
+        int direction = Random.Range(0, 1);
+		Instantiate(enemies[enemyIndex], transform.position, direction == 0 ? transform.rotation : new Quaternion(-transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w));
 	}
 }
