@@ -26,7 +26,7 @@ public class PlayerControl : MonoBehaviour
 
 	void Update()
 	{
-		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
+		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
         
 		if(Input.GetButtonDown("Jump") && grounded)
 			canJump = true;
