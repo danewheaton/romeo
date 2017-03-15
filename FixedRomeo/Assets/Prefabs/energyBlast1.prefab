@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
-  - 114: {fileID: 11400000}
+  - 114: {fileID: 114000012330906850}
   m_Layer: 0
   m_Name: energyBlast1
   m_TagString: Bullet
@@ -169,19 +169,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4383004accee7494fba3cf64d65513c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageModifier: 1
-  explosion: {fileID: 100000, guid: 42404bf7d14c342f69690c9961a7530d, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -259,3 +246,16 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}
   m_IsPrefabParent: 1
+--- !u!114 &114000012330906850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa09f1a812cdaf4a846b70a79452dc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageModifier: 1
+  explosionPrefab: {fileID: 100000, guid: 42404bf7d14c342f69690c9961a7530d, type: 2}
