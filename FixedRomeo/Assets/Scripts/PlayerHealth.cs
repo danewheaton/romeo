@@ -8,14 +8,12 @@ public class PlayerHealth : MonoBehaviour
 
 	SpriteRenderer healthBar;
 	Vector3 healthScale;
-	PlayerControl playerCtrl;
 	Animator anim;
 
     float lastHitTime;
 
     void Start ()
 	{
-		playerCtrl = GetComponent<PlayerControl>();
 		healthBar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
         
@@ -55,8 +53,6 @@ public class PlayerHealth : MonoBehaviour
 
 	void TakeDamage (Transform enemy)
 	{
-		playerCtrl.canJump = false;
-
 		// create a vector that's from the enemy to the player with an upwards boost
 		Vector3 hurtVector = transform.position - enemy.position + Vector3.up * 5f;
 
