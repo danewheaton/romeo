@@ -11,6 +11,7 @@ public class PlayerControl : MonoBehaviour
 
     Transform groundCheck;
     Animator anim;
+    Rigidbody2D rb;
 
     bool grounded;
 
@@ -18,6 +19,7 @@ public class PlayerControl : MonoBehaviour
     {
         groundCheck = GameObject.Find("groundCheck").transform;
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -34,15 +36,19 @@ public class PlayerControl : MonoBehaviour
             float h = Input.GetAxis("Horizontal");
             anim.SetFloat("Speed", Mathf.Abs(h));
 
-            if (h * GetComponent<Rigidbody2D>().velocity.x < maxSpeed)
-                GetComponent<Rigidbody2D>().AddForce(Vector2.right * h * moveForce);
-            if (Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x) > maxSpeed)
-                GetComponent<Rigidbody2D>().velocity = new Vector2
-                    (Mathf.Sign(GetComponent<Rigidbody2D>().velocity.x) * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);    // mathf.sign? wtf?
+            if (h * rb.velocity.x < maxSpeed)
+                rb.AddForce(Vector2.right * h * moveForce);
+            if (Mathf.Abs(rb.velocity.x) > maxSpeed)
+                rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);    // mathf.sign? wtf?
             if ((h > 0 && !facingRight) || (h < 0 && facingRight)) Flip();
 
             if (Input.GetButtonDown("Jump")) Jump();
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        rb.velocity = new Vector2(0, rb.velocity.y);
     }
 
     void Flip()
