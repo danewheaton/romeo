@@ -28,7 +28,7 @@ GameObject:
   - 82: {fileID: 82000010780401798}
   - 212: {fileID: 212000011397802406}
   m_Layer: 9
-  m_Name: Sigma
+  m_Name: SigmaV1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -366,7 +366,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facingRight: 1
-  canJump: 0
   moveForce: 365
   maxSpeed: 8
   jumpForce: 1000
