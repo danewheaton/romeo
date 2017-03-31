@@ -14151,7 +14151,7 @@ GameObject:
   - 4: {fileID: 454758293}
   m_Layer: 9
   m_Name: GroundCheck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52669,7 +52669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1550514894
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -64428,7 +64428,7 @@ GameObject:
   - 4: {fileID: 1941557423}
   m_Layer: 9
   m_Name: CeilingCheck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67025,8 +67025,8 @@ GameObject:
   - 114: {fileID: 2029096261}
   - 82: {fileID: 2029096260}
   m_Layer: 9
-  m_Name: Gun (1)
-  m_TagString: Untagged
+  m_Name: Gun
+  m_TagString: Player
   m_Icon: {fileID: -215833656, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67039,7 +67039,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2029096258}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.51000017, y: -0.05004305, z: -1}
+  m_LocalPosition: {x: 0.383, y: 0.103, z: -1}
   m_LocalScale: {x: 0.7056038, y: 0.7056046, z: 1.25}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -67791,7 +67791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &2058475321
 BoxCollider2D:
   m_ObjectHideFlags: 0

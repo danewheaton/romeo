@@ -8,7 +8,6 @@ public class Gun : MonoBehaviour
 	public float speed = 20f, energyBlast2ChargeAmount = .25f, energyBlast3ChargeAmount = .75f;
 
 	PlatformerCharacter2D playerCtrl;
-    PlayerControl playerCtrl2;
 	Animator anim;
     AudioSource source;
 
@@ -18,7 +17,6 @@ public class Gun : MonoBehaviour
 	{
 		anim = transform.root.gameObject.GetComponent<Animator>();
 		playerCtrl = transform.root.GetComponent<PlatformerCharacter2D>();
-		playerCtrl2 = transform.root.GetComponent<PlayerControl>();
         source = GetComponent<AudioSource>();
 	}
 
@@ -39,7 +37,7 @@ public class Gun : MonoBehaviour
 			anim.SetTrigger("Shoot");
 			source.Play();
             
-			if(playerCtrl.m_FacingRight || playerCtrl2.facingRight)
+			if(playerCtrl.m_FacingRight)
 			{
 				Rigidbody2D bulletInstance = Instantiate(projectile, transform.position, Quaternion.Euler(new Vector3(0,0,0))) as Rigidbody2D;
 				bulletInstance.velocity = new Vector2(speed, 0);
