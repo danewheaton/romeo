@@ -2,25 +2,50 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour {
+public class UIManager : MonoBehaviour
+{
 
     [SerializeField]
-    Slider HealthSlider;
+    public Slider HealthSlider;
+    [SerializeField]
+    public float PlayerHealth, repeatDamagePeriod = 2f, hurtForce = 10f, damageAmount = 10f;
 
-    PlayerHealth playerHealth;
+    float lastHitTime;
 
-    private float PlayerHealth;
-	// Use this for initialization
-	void Start () {
-        PlayerHealth = GetComponent<PlayerHealth>().health;
-        PlayerHealth = playerHealth.health;
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Use this for initialization
+    void Start()
+    {
+
         HealthSlider.value = PlayerHealth;
-	}
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
+        HealthSlider.value = PlayerHealth;
+    }
 
+    void TakeDamage()
+    {
+        PlayerHealth -= 10f;
+
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            if (Time.time > lastHitTime + repeatDamagePeriod) // if past cool-down time
+            {
+                
+                if (PlayerHealth > 0f)
+                {
+                    TakeDamage();
+                    lastHitTime = Time.time - 1f;
+                }
+            }
+        }
+
+    }
 }

@@ -5,7 +5,7 @@ public class PlayerHealth : MonoBehaviour
 {	
 	public float health = 100f, repeatDamagePeriod = 2f, hurtForce = 10f, damageAmount = 10f;
 	public AudioClip[] ouchClips;
-
+ 
 	SpriteRenderer healthBar;
 	Vector3 healthScale;
 	Animator anim;
@@ -14,10 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start ()
 	{
-		//healthBar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
-		anim = GetComponent<Animator>();
-        
-		healthScale = healthBar.transform.localScale;
+    
 	}
 
 
@@ -59,17 +56,13 @@ public class PlayerHealth : MonoBehaviour
 		// add a force to the player in the direction of the vector and multiply by the hurtForce
 		GetComponent<Rigidbody2D>().AddForce(hurtVector * hurtForce);
         
-		health -= damageAmount;
-		UpdateHealthBar();
+
+	
         
 		int i = Random.Range (0, ouchClips.Length);
 		AudioSource.PlayClipAtPoint(ouchClips[i], transform.position);
 	}
 
 
-	public void UpdateHealthBar ()  // TODO: change this to behave like a megaman-style health bar
-	{
-		healthBar.material.color = Color.Lerp(Color.green, Color.red, 1 - health * 0.01f);
-		healthBar.transform.localScale = new Vector3(healthScale.x * health * 0.01f, 1, 1);
-	}
+
 }
