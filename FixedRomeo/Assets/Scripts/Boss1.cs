@@ -163,7 +163,7 @@ public class Boss1 : MonoBehaviour
         
         yield return new WaitForSeconds(Random.Range(stompFrequencyMin + 0f, stompFrequencyMax + 1f));
 
-        StopCoroutine(Charge());
+        StopCoroutine(ChargeRandomly());
 
         myRigidbody.AddForce(Vector2.up * stompForce);
         if (OnBoss1Stomp != null) OnBoss1Stomp();

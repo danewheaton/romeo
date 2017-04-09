@@ -3,23 +3,27 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour 
 {
-	[SerializeField] float xSmooth = 2, ySmooth = 2, shakeIntensity = .5f, shakeDuration = 1;
+	[SerializeField] float xSmooth = 2, ySmooth = 2, shakeIntensity = .5f, shakeDuration = 1, zoomedOutZPos = -30;
 
 	Transform player;
+    Vector3 originalPos;
     bool cameraIsShaking;
 
     void OnEnable()
     {
         Boss1.OnBoss1Stomp += CallShakeCamera;
+        SigmaTriggers.OnEnterArena += CallZoomOut;
     }
     void OnDisable()
     {
         Boss1.OnBoss1Stomp -= CallShakeCamera;
+        SigmaTriggers.OnEnterArena -= CallZoomOut;
     }
 
     void Start()
 	{
 		player = GameObject.FindGameObjectWithTag("Player").transform;
+        originalPos = transform.position;
 	}
 
 	void FixedUpdate ()
@@ -41,6 +45,23 @@ public class CameraFollow : MonoBehaviour
     void CallShakeCamera()
     {
         StartCoroutine(CameraShake());
+    }
+
+    void CallZoomOut()
+    {
+        StartCoroutine(ZoomOut());
+    }
+
+    IEnumerator ZoomOut()
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < 5)
+        {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, zoomedOutZPos), elapsedTime / 5);
+
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     IEnumerator CameraShake()
