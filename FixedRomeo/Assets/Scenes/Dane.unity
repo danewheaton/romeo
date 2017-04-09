@@ -3514,11 +3514,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 822.7
+      value: 817.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -312.4
+      value: -263.8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3882,6 +3882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   stompForce: 5000
+  chargeForce: 20000
   punchFrequencyMin: 0.5
   punchFrequencyMax: 3
   stompFrequencyMin: 1
@@ -6806,6 +6807,22 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1020960283 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000012562033122, guid: 6a138fd9ad1d6994598f1cb04214b365,
+    type: 2}
+  m_PrefabInternal: {fileID: 1672758631}
+--- !u!114 &1020960293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1020960283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c1b740c2c223a43b5a800175a1f645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1026596786
 GameObject:
   m_ObjectHideFlags: 0
@@ -10706,11 +10723,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000011351448446, guid: 6a138fd9ad1d6994598f1cb04214b365, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 822.7
+      value: 817.3
       objectReference: {fileID: 0}
     - target: {fileID: 4000011351448446, guid: 6a138fd9ad1d6994598f1cb04214b365, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -312.5
+      value: -264.2
       objectReference: {fileID: 0}
     - target: {fileID: 4000011351448446, guid: 6a138fd9ad1d6994598f1cb04214b365, type: 2}
       propertyPath: m_LocalPosition.z
@@ -12209,6 +12226,49 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1943125731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1943125733}
+  - 61: {fileID: 1943125732}
+  m_Layer: 0
+  m_Name: ArenaTrigger
+  m_TagString: BossArena
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1943125732
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1943125731}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 11.36, y: 1}
+--- !u!4 &1943125733
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1943125731}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 825.5, y: -290, z: -0.9812115}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
 --- !u!1 &1951861150
 GameObject:
   m_ObjectHideFlags: 0

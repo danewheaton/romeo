@@ -12,6 +12,7 @@ public class Boss1 : MonoBehaviour
     [SerializeField] float
         speed = 5,
         stompForce = 500,
+        chargeForce = 20000,
         punchFrequencyMin = .5f,
         punchFrequencyMax = 3,
         stompFrequencyMin = 2,
@@ -87,13 +88,13 @@ public class Boss1 : MonoBehaviour
         {
             UpdatePatrol();
             if (canStomp) StartCoroutine(StompRandomly());
-            StopCoroutine(Charge());
+            StopCoroutine(ChargeRandomly());
         }
         else if (sigmaTransform.position.y < (transform.position.y - verticalReach))
         {
             UpdatePatrol();
             StopCoroutine(StompRandomly());
-            StopCoroutine(Charge());
+            StopCoroutine(ChargeRandomly());
         }
         else
         {
@@ -201,6 +202,7 @@ public class Boss1 : MonoBehaviour
     IEnumerator Charge()
     {
         canCharge = false;
+        charging = false;
 
         StopCoroutine(StompRandomly());
         StopCoroutine(ChargeRandomly());
@@ -208,23 +210,111 @@ public class Boss1 : MonoBehaviour
         myRigidbody.velocity = Vector2.zero;
 
         float elapsedTime = 0;
-        while (elapsedTime < 2)
+        float timer = 3;
+        while (elapsedTime < timer)
         {
-            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / 2);
+            print("should change color");
+            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / timer);
 
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-        myRigidbody.AddForce((myRenderer.flipX ? Vector2.right : Vector2.left) * 2000);
-        myRenderer.color = originalColor;
+        myRigidbody.AddForce((myRenderer.flipX ? Vector2.right : Vector2.left) * 20000);
 
         canCharge = true;
     }
 
     IEnumerator InjurySequence()
     {
-        yield return new WaitForSeconds(injuredTimer);
-        myRenderer.color = originalColor;
+        float elapsedTime = 0;
+        while (elapsedTime < (injuredTimer / 10))
+        {
+            myRenderer.color = Color.Lerp(Color.red, originalColor, elapsedTime / (injuredTimer / 10));
+
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        elapsedTime = 0;
+        while (elapsedTime < (injuredTimer / 10))
+        {
+            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / (injuredTimer / 10));
+
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        elapsedTime = 0;
+        while (elapsedTime < (injuredTimer / 10))
+        {
+            myRenderer.color = Color.Lerp(Color.red, originalColor, elapsedTime / (injuredTimer / 10));
+
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        elapsedTime = 0;
+        while (elapsedTime < (injuredTimer / 10))
+        {
+            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / (injuredTimer / 10));
+
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        elapsedTime = 0;
+        while (elapsedTime < (injuredTimer / 10))
+        {
+            myRenderer.color = Color.Lerp(Color.red, originalColor, elapsedTime / (injuredTimer / 10));
+
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        elapsedTime = 0;
+        while (elapsedTime < (injuredTimer / 10))
+        {
+            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / (injuredTimer / 10));
+
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        elapsedTime = 0;
+        while (elapsedTime < (injuredTimer / 10))
+        {
+            myRenderer.color = Color.Lerp(Color.red, originalColor, elapsedTime / (injuredTimer / 10));
+
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        elapsedTime = 0;
+        while (elapsedTime < (injuredTimer / 10))
+        {
+            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / (injuredTimer / 10));
+
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        elapsedTime = 0;
+        while (elapsedTime < (injuredTimer / 10))
+        {
+            myRenderer.color = Color.Lerp(Color.red, originalColor, elapsedTime / (injuredTimer / 10));
+
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        elapsedTime = 0;
+        while (elapsedTime < (injuredTimer / 10))
+        {
+            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / (injuredTimer / 10));
+
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        elapsedTime = 0;
+        while (elapsedTime < (injuredTimer / 10))
+        {
+            myRenderer.color = Color.Lerp(Color.red, originalColor, elapsedTime / (injuredTimer / 10));
+
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
         currentState = Boss1States.COMBAT;
     }
 
