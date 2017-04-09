@@ -14,7 +14,9 @@ public class Enemy : MonoBehaviour
 
 	
 	void Start()
+        
 	{
+        myRigidbody = GetComponent<Rigidbody2D>();
 		frontCheck = transform.Find("frontCheck").transform;
 	}
 

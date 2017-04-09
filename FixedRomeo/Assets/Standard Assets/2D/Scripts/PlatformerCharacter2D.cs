@@ -16,8 +16,8 @@ namespace UnityStandardAssets._2D
         [SerializeField] Transform Wallcheck;
         private bool isOnWall = false;
 
-        private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
-        const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+        [SerializeField] private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
+        const float k_GroundedRadius = .4f; // Radius of the overlap circle to determine if grounded
         [SerializeField] private bool m_Grounded;            // Whether or not the player is grounded.
         private Transform m_CeilingCheck;   // A position marking where to check for ceilings
         const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
@@ -41,12 +41,20 @@ namespace UnityStandardAssets._2D
 
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             // This can be done using layers instead but Sample Assets will not overwrite your project settings.
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
-            for (int i = 0; i < colliders.Length; i++)
+            RaycastHit2D GroundHit = Physics2D.Raycast(m_GroundCheck.position, Vector2.down, k_GroundedRadius);
+            Debug.Log("Hit" + GroundHit.collider.name);
+            if (GroundHit.collider.gameObject.tag == "ground" )
             {
-                if (colliders[i].gameObject != gameObject)
-                    m_Grounded = true;
+                m_Grounded = true;
             }
+
+
+            //    Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+            //for (int i = 0; i < colliders.Length; i++)
+            //{
+            //    if (colliders[i].gameObject != gameObject)
+            //        m_Grounded = true;
+            //}
             m_Anim.SetBool("Ground", m_Grounded);
 
             // Set the vertical animation

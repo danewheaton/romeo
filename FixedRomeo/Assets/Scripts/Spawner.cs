@@ -6,6 +6,8 @@ public class Spawner : MonoBehaviour
 	public float spawnTime = 5;
 	public float spawnDelayMin = 1, spawnDelayMax = 3;
 	public GameObject[] enemies;
+    public int EnemyCount = 0;
+    public int MaxEnemies = 10;
 
 
 	void Start ()
@@ -14,10 +16,14 @@ public class Spawner : MonoBehaviour
 	}
 
 
-	void Spawn ()
-	{
-		int enemyIndex = Random.Range(0, enemies.Length);
-        int direction = Random.Range(0, 1);
-		Instantiate(enemies[enemyIndex], transform.position, direction == 0 ? transform.rotation : new Quaternion(-transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w));
-	}
+    void Spawn()
+    {
+        if (EnemyCount < MaxEnemies)
+        {
+            EnemyCount++;
+            int enemyIndex = Random.Range(0, enemies.Length);
+            int direction = Random.Range(0, 1);
+            Instantiate(enemies[enemyIndex], transform.position, direction == 0 ? transform.rotation : new Quaternion(-transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w));
+        }
+    }
 }
