@@ -36,7 +36,7 @@ public class Boss1 : MonoBehaviour
     Color originalColor;
 
     Vector3 targetPos, originalBlastWaveScale;
-    bool canStomp = true, canCharge = true, charging;
+    bool canAttack = true, charging;
 
     void Start ()
     {
@@ -88,24 +88,31 @@ public class Boss1 : MonoBehaviour
         if (sigmaTransform.position.y > (transform.position.y + verticalReach))
         {
             UpdatePatrol();
-            if (canStomp) StartCoroutine(StompRandomly());
-            StopCoroutine(ChargeRandomly());
+            if (canAttack) StartCoroutine(AttackRandomly(Attacks.STOMP));
+            StopCoroutine(AttackRandomly(Attacks.PUNCH));
+            StopCoroutine(AttackRandomly(Attacks.CHARGE));
+            //StopCoroutine(ChargeRandomly());
         }
         else if (sigmaTransform.position.y < (transform.position.y - verticalReach))
         {
             UpdatePatrol();
-            StopCoroutine(StompRandomly());
-            StopCoroutine(ChargeRandomly());
+            StopCoroutine(AttackRandomly(Attacks.PUNCH));
+            StopCoroutine(AttackRandomly(Attacks.STOMP));
+            StopCoroutine(AttackRandomly(Attacks.CHARGE));
+            //StopCoroutine(StompRandomly());
+            //StopCoroutine(ChargeRandomly());
         }
         else
         {
             if (sigmaTransform.position.x < transform.position.x) myRenderer.flipX = false;
             else myRenderer.flipX = true;
 
-            if (!canCharge) myRigidbody.MovePosition(transform.position + (myRenderer.flipX ? transform.right : -transform.right) * speed * Time.deltaTime); // placeholder
+            if (!charging) myRigidbody.MovePosition(transform.position + (myRenderer.flipX ? transform.right : -transform.right) * speed * Time.deltaTime); // placeholder
 
-            if (canStomp) StartCoroutine(StompRandomly());
-            if (canCharge) StartCoroutine(ChargeRandomly());
+            if (canAttack) StartCoroutine(AttackRandomly((Attacks)Random.Range(0, 3)));
+
+            //if (canStomp) StartCoroutine(StompRandomly());
+            //if (canCharge) StartCoroutine(ChargeRandomly());
 
             // move toward sigma if sigma is too far away, otherwise keep sigma in range of punch attacks
             // stomp every once in a while if sigma is not quite in range of punch
@@ -159,55 +166,97 @@ public class Boss1 : MonoBehaviour
         // this function might get deleted, since death is an event, not a state
     }
 
-    IEnumerator StompRandomly()
-    {
-        canStomp = false;
+    //IEnumerator StompRandomly()
+    //{
+    //    canStomp = false;
         
-        yield return new WaitForSeconds(Random.Range(stompFrequencyMin + 0f, stompFrequencyMax + 1f));
+    //    yield return new WaitForSeconds(Random.Range(stompFrequencyMin + 0f, stompFrequencyMax + 1f));
 
-        StopCoroutine(ChargeRandomly());
+    //    StopCoroutine(ChargeRandomly());
 
-        myRigidbody.AddForce(Vector2.up * stompForce);
-        if (OnBoss1Stomp != null) OnBoss1Stomp();
+    //    myRigidbody.AddForce(Vector2.up * stompForce);
+    //    if (OnBoss1Stomp != null) OnBoss1Stomp();
 
-        blastWave.SetActive(true);
+    //    blastWave.SetActive(true);
 
-        float elapsedTime = 0;
-        while (elapsedTime < 1)
-        {
-            blastWave.transform.localScale = new Vector3(blastWave.transform.localScale.x + 2, blastWave.transform.localScale.y, blastWave.transform.localScale.z);
+    //    float elapsedTime = 0;
+    //    while (elapsedTime < 1)
+    //    {
+    //        blastWave.transform.localScale = new Vector3(blastWave.transform.localScale.x + 2, blastWave.transform.localScale.y, blastWave.transform.localScale.z);
 
-            elapsedTime += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
-        }
-        blastWave.transform.localScale = originalBlastWaveScale;
-        blastWave.SetActive(false);
+    //        elapsedTime += Time.deltaTime;
+    //        yield return new WaitForEndOfFrame();
+    //    }
+    //    blastWave.transform.localScale = originalBlastWaveScale;
+    //    blastWave.SetActive(false);
 
-        canStomp = true;
-    }
+    //    canStomp = true;
+    //}
 
-    IEnumerator ChargeRandomly()
+    //IEnumerator ChargeRandomly()
+    //{
+    //    canCharge = false;
+
+    //    yield return new WaitForSeconds(Random.Range(chargefrequencyMin + 0f, chargeFrequencyMax + 1f));
+
+    //    StopCoroutine(StompRandomly());
+
+    //    currentState = Boss1States.CHARGE_ATTACK;
+
+    //    canCharge = true;
+    //    charging = true;
+    //}
+
+    IEnumerator AttackRandomly(Attacks attackType)
     {
-        canCharge = false;
+        canAttack = false;
 
-        yield return new WaitForSeconds(Random.Range(chargefrequencyMin + 0f, chargeFrequencyMax + 1f));
+        switch (attackType)
+        {
+            case Attacks.PUNCH:
+                break;
+            case Attacks.STOMP:
 
-        StopCoroutine(StompRandomly());
+                yield return new WaitForSeconds(Random.Range(stompFrequencyMin + 0f, stompFrequencyMax + 1f));
 
-        currentState = Boss1States.CHARGE_ATTACK;
+                myRigidbody.AddForce(Vector2.up * stompForce);
+                if (OnBoss1Stomp != null) OnBoss1Stomp();
 
-        canCharge = true;
-        charging = true;
+                blastWave.SetActive(true);
+
+                float elapsedTime = 0;
+                while (elapsedTime < 1)
+                {
+                    blastWave.transform.localScale = new Vector3(blastWave.transform.localScale.x + 2, blastWave.transform.localScale.y, blastWave.transform.localScale.z);
+
+                    elapsedTime += Time.deltaTime;
+                    yield return new WaitForEndOfFrame();
+                }
+                blastWave.transform.localScale = originalBlastWaveScale;
+                blastWave.SetActive(false);
+
+                break;
+            case Attacks.CHARGE:
+                yield return new WaitForSeconds(Random.Range(chargefrequencyMin + 0f, chargeFrequencyMax + 1f));
+                currentState = Boss1States.CHARGE_ATTACK;
+                charging = true;
+                break;
+        }
+
+        canAttack = true;
     }
 
     IEnumerator Charge()
     {
-        canCharge = false;
+        //canCharge = false;
         charging = false;
 
-        StopCoroutine(StompRandomly());
-        StopCoroutine(ChargeRandomly());
-        
+        //StopCoroutine(StompRandomly());
+        //StopCoroutine(ChargeRandomly());
+        StopCoroutine(AttackRandomly(Attacks.PUNCH));
+        StopCoroutine(AttackRandomly(Attacks.STOMP));
+        StopCoroutine(AttackRandomly(Attacks.CHARGE));
+
         myRigidbody.velocity = Vector2.zero;
 
         float elapsedTime = 0;
@@ -222,7 +271,7 @@ public class Boss1 : MonoBehaviour
         }
         myRigidbody.AddForce((myRenderer.flipX ? Vector2.right : Vector2.left) * 20000);
 
-        canCharge = true;
+        //canCharge = true;
     }
 
     IEnumerator InjurySequence()
