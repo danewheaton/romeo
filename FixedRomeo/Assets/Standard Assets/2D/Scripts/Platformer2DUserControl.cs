@@ -11,6 +11,8 @@ namespace UnityStandardAssets._2D
         private bool m_Jump;
 
 
+
+
         private void Awake()
         {
             m_Character = GetComponent<PlatformerCharacter2D>();

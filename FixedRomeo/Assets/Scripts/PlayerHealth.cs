@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start ()
 	{
-		healthBar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
+		//healthBar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
         
 		healthScale = healthBar.transform.localScale;
