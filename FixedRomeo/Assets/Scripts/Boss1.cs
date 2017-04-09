@@ -201,13 +201,16 @@ public class Boss1 : MonoBehaviour
     IEnumerator Charge()
     {
         canCharge = false;
+
+        StopCoroutine(StompRandomly());
+        StopCoroutine(ChargeRandomly());
         
         myRigidbody.velocity = Vector2.zero;
 
         float elapsedTime = 0;
-        while (elapsedTime < 3)
+        while (elapsedTime < 2)
         {
-            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / 3);
+            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / 2);
 
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
