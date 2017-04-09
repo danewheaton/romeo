@@ -610,7 +610,7 @@ GameObject:
   - 61: {fileID: 90009647}
   m_Layer: 0
   m_Name: Floor (104)
-  m_TagString: Untagged
+  m_TagString: Boss1Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3880,12 +3880,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064d28db2394a79478e1db2cf2aba39e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 2
   stompForce: 5000
   punchFrequencyMin: 0.5
   punchFrequencyMax: 3
   stompFrequencyMin: 1
   stompFrequencyMax: 5
+  chargefrequencyMin: 4
+  chargeFrequencyMax: 8
   activationRange: 30
   verticalReach: 1
   injuredTimer: 5
@@ -12373,7 +12375,7 @@ GameObject:
   - 61: {fileID: 1960446511}
   m_Layer: 0
   m_Name: Floor (121)
-  m_TagString: Untagged
+  m_TagString: Boss1Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public enum Boss1States { INACTIVE, COMBAT, CHARGE_ATTACK, INJURED, DEAD }
-public enum Attacks { PUNCH, STOMP, CHARGE }
+public enum Attacks { PUNCH, STOMP, CHARGE }    // TODO: replace weird random coroutines with a function that takes in these - mega man can only do one attack at a time, after all
 
 public class Boss1 : MonoBehaviour
 {
@@ -16,22 +16,26 @@ public class Boss1 : MonoBehaviour
         punchFrequencyMax = 3,
         stompFrequencyMin = 2,
         stompFrequencyMax = 6,
+        chargefrequencyMin = 4,
+        chargeFrequencyMax = 8,
         activationRange = 30,
         verticalReach = 1, 
         injuredTimer = 5,
         deathTimer = 1;
     [SerializeField] Transform navPointLeft, navPointRight;
     [SerializeField] GameObject blastWave;
-
-    Transform sigmaTransform, blastWaveTransform;
+    
     Boss1States currentState = Boss1States.INACTIVE;
 
+    Transform sigmaTransform;
     Rigidbody2D myRigidbody;
     SpriteRenderer myRenderer;
     Animator myAnim;
 
-    Vector3 targetPos, originalBlastWaveSize;
-    bool canStomp = true;
+    Color originalColor;
+
+    Vector3 targetPos, originalBlastWaveScale;
+    bool canStomp = true, canCharge = true, charging;
 
     void Start ()
     {
@@ -42,10 +46,11 @@ public class Boss1 : MonoBehaviour
         myAnim = GetComponent<Animator>();
 
         targetPos = navPointLeft.position;
-
-        originalBlastWaveSize = blastWave.transform.localScale;
+        
+        originalBlastWaveScale = blastWave.transform.localScale;
         blastWave.SetActive(false);
-	}
+        originalColor = myRenderer.color;
+    }
 	
 	void Update ()
     {
@@ -56,6 +61,9 @@ public class Boss1 : MonoBehaviour
                 break;
             case Boss1States.COMBAT:
                 UpdateCombatBehavior();
+                break;
+            case Boss1States.CHARGE_ATTACK:
+                UpdateChargeBehavior();
                 break;
             case Boss1States.INJURED:
                 UpdateInjuredBehavior();
@@ -79,21 +87,34 @@ public class Boss1 : MonoBehaviour
         {
             UpdatePatrol();
             if (canStomp) StartCoroutine(StompRandomly());
-            // stomp every once in a while
+            StopCoroutine(Charge());
         }
-        else if (sigmaTransform.position.y < (transform.position.y - verticalReach)) UpdatePatrol();
+        else if (sigmaTransform.position.y < (transform.position.y - verticalReach))
+        {
+            UpdatePatrol();
+            StopCoroutine(StompRandomly());
+            StopCoroutine(Charge());
+        }
         else
         {
             if (sigmaTransform.position.x < transform.position.x) myRenderer.flipX = false;
             else myRenderer.flipX = true;
 
-            myRigidbody.MovePosition(transform.position + (myRenderer.flipX ? transform.right : -transform.right) * speed * Time.deltaTime); // placeholder
+            if (!canCharge) myRigidbody.MovePosition(transform.position + (myRenderer.flipX ? transform.right : -transform.right) * speed * Time.deltaTime); // placeholder
+
+            if (canStomp) StartCoroutine(StompRandomly());
+            if (canCharge) StartCoroutine(ChargeRandomly());
 
             // move toward sigma if sigma is too far away, otherwise keep sigma in range of punch attacks
             // stomp every once in a while if sigma is not quite in range of punch
             // punch every once in a while
             // charge every once in a longer while
         }
+    }
+
+    void UpdateChargeBehavior()
+    {
+        if (charging) StartCoroutine(Charge());
     }
 
     void UpdateInjuredBehavior()
@@ -139,15 +160,68 @@ public class Boss1 : MonoBehaviour
     IEnumerator StompRandomly()
     {
         canStomp = false;
+        
         yield return new WaitForSeconds(Random.Range(stompFrequencyMin + 0f, stompFrequencyMax + 1f));
+
+        StopCoroutine(Charge());
+
         myRigidbody.AddForce(Vector2.up * stompForce);
         if (OnBoss1Stomp != null) OnBoss1Stomp();
+
+        blastWave.SetActive(true);
+
+        float elapsedTime = 0;
+        while (elapsedTime < 1)
+        {
+            blastWave.transform.localScale = new Vector3(blastWave.transform.localScale.x + 2, blastWave.transform.localScale.y, blastWave.transform.localScale.z);
+
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        blastWave.transform.localScale = originalBlastWaveScale;
+        blastWave.SetActive(false);
+
         canStomp = true;
+    }
+
+    IEnumerator ChargeRandomly()
+    {
+        canCharge = false;
+
+        yield return new WaitForSeconds(Random.Range(chargefrequencyMin + 0f, chargeFrequencyMax + 1f));
+
+        StopCoroutine(StompRandomly());
+
+        currentState = Boss1States.CHARGE_ATTACK;
+
+        canCharge = true;
+        charging = true;
+    }
+
+    IEnumerator Charge()
+    {
+        canCharge = false;
+        
+        myRigidbody.velocity = Vector2.zero;
+
+        float elapsedTime = 0;
+        while (elapsedTime < 3)
+        {
+            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / 3);
+
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        myRigidbody.AddForce((myRenderer.flipX ? Vector2.right : Vector2.left) * 2000);
+        myRenderer.color = originalColor;
+
+        canCharge = true;
     }
 
     IEnumerator InjurySequence()
     {
         yield return new WaitForSeconds(injuredTimer);
+        myRenderer.color = originalColor;
         currentState = Boss1States.COMBAT;
     }
 
