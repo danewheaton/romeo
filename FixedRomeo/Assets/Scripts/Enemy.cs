@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 	public AudioClip[] deathClips;
 
 	Transform frontCheck;
+    Rigidbody2D myRigidbody;
 
 	bool dead = false;
 
@@ -31,7 +32,7 @@ public class Enemy : MonoBehaviour
 			}
 		}
         
-		GetComponent<Rigidbody2D>().velocity = new Vector2(transform.localScale.x * moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+		myRigidbody.velocity = new Vector2(transform.localScale.x * moveSpeed, myRigidbody.velocity.y);
         #endregion
 
         if (health <= 0 && !dead) Die();
