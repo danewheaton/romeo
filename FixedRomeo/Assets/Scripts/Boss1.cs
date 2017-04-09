@@ -24,7 +24,7 @@ public class Boss1 : MonoBehaviour
         injuredTimer = 5,
         deathTimer = 1;
     [SerializeField] Transform navPointLeft, navPointRight;
-    [SerializeField] GameObject blastWave;
+    [SerializeField] GameObject blastWave, weakSpot;
     
     Boss1States currentState = Boss1States.INACTIVE;
 
@@ -50,6 +50,7 @@ public class Boss1 : MonoBehaviour
         
         originalBlastWaveScale = blastWave.transform.localScale;
         blastWave.SetActive(false);
+        weakSpot.SetActive(false);
         originalColor = myRenderer.color;
     }
 	
@@ -226,6 +227,8 @@ public class Boss1 : MonoBehaviour
 
     IEnumerator InjurySequence()
     {
+        weakSpot.SetActive(true);
+
         float elapsedTime = 0;
         while (elapsedTime < (injuredTimer / 10))
         {
@@ -314,6 +317,8 @@ public class Boss1 : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+
+        weakSpot.SetActive(false);
 
         currentState = Boss1States.COMBAT;
     }
