@@ -9,10 +9,12 @@ public class PlayerControl : MonoBehaviour
     public float moveForce = 365f, maxSpeed = 5f, jumpForce = 1000f, tauntProbability = 50f, tauntDelay = 1f;
     public AudioClip[] jumpClips;
 
+
+
     Transform groundCheck;
     Animator anim;
     Rigidbody2D rb;
-
+    [SerializeField]
     bool grounded;
 
     void Start()
@@ -24,6 +26,7 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
+
         grounded = Physics2D.OverlapCircleAll(groundCheck.position, .5f).Length > 2;
 
         print(Physics2D.OverlapCircleAll(groundCheck.position, .5f).Length);
@@ -67,4 +70,6 @@ public class PlayerControl : MonoBehaviour
         AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
         GetComponent<Rigidbody2D>().AddForce(new Vector2(facingRight ? jumpForce : -jumpForce, jumpForce));
     }
+
+
 }

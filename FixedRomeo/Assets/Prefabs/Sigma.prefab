@@ -41,9 +41,25 @@ GameObject:
   - 114: {fileID: 114000011526230168}
   - 114: {fileID: 114000010425320962}
   - 61: {fileID: 61000013655289764}
+  - 114: {fileID: 114000012470470270}
   m_Layer: 0
   m_Name: Sigma
   m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000012841006178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000014187416160}
+  m_Layer: 0
+  m_Name: WallCheck
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,13 +116,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012562033122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 9, z: 0}
+  m_LocalPosition: {x: -6.24, y: 1.23, z: 0}
   m_LocalScale: {x: 1.7715329, y: 1.7715304, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000014121902080}
   - {fileID: 4000012937592650}
   - {fileID: 4000010438988378}
+  - {fileID: 4000014187416160}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000012937592650
@@ -116,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011845716630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.6034732, z: 0}
+  m_LocalPosition: {x: 0, y: -0.385, z: 0}
   m_LocalScale: {x: 0.56448287, y: 0.5644837, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -135,6 +152,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000011351448446}
   m_RootOrder: 0
+--- !u!4 &4000014187416160
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012841006178}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.36, y: 0.077, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000011351448446}
+  m_RootOrder: 3
 --- !u!50 &50000012567909438
 Rigidbody2D:
   serializedVersion: 2
@@ -318,6 +348,26 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 4294967295
+  WallhitDistance: 1
+  Downthrust: 0
+  Wallcheck: {fileID: 4000014187416160}
+  m_Grounded: 0
+--- !u!114 &114000012470470270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012562033122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a60c4d9bda32440b8ff31c2be00b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthSlider: {fileID: 0}
+  PlayerHealth: 100
+  repeatDamagePeriod: 2
+  hurtForce: 10
+  damageAmount: 10
 --- !u!212 &212000014147678382
 SpriteRenderer:
   m_ObjectHideFlags: 1
