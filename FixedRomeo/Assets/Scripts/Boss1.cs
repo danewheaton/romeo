@@ -9,23 +9,42 @@ public class Boss1 : MonoBehaviour
     public delegate void Stomp();
     public static event Stomp OnBoss1Stomp;
 
-    [SerializeField] float speed = 2, combatRange = 30, verticalReach = 5,  injuredTimer = 5, deathTimer = 1;
+    [SerializeField] float
+        speed = 5,
+        stompForce = 500,
+        punchFrequencyMin = .5f,
+        punchFrequencyMax = 3,
+        stompFrequencyMin = 2,
+        stompFrequencyMax = 6,
+        activationRange = 30,
+        verticalReach = 1, 
+        injuredTimer = 5,
+        deathTimer = 1;
+    [SerializeField] Transform navPointLeft, navPointRight;
+    [SerializeField] GameObject blastWave;
 
-    Transform sigma;
+    Transform sigmaTransform, blastWaveTransform;
     Boss1States currentState = Boss1States.INACTIVE;
-    Attacks currentAttack;
 
     Rigidbody2D myRigidbody;
     SpriteRenderer myRenderer;
     Animator myAnim;
-    
-	void Start ()
+
+    Vector3 targetPos, originalBlastWaveSize;
+    bool canStomp = true;
+
+    void Start ()
     {
-        sigma = GameObject.FindGameObjectWithTag("Player").transform;
+        sigmaTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
         myRigidbody = GetComponent<Rigidbody2D>();
         myRenderer = GetComponent<SpriteRenderer>();
         myAnim = GetComponent<Animator>();
+
+        targetPos = navPointLeft.position;
+
+        originalBlastWaveSize = blastWave.transform.localScale;
+        blastWave.SetActive(false);
 	}
 	
 	void Update ()
@@ -36,7 +55,7 @@ public class Boss1 : MonoBehaviour
                 UpdateInactiveBehavior();
                 break;
             case Boss1States.COMBAT:
-                UpdateAttackingBehavior();
+                UpdateCombatBehavior();
                 break;
             case Boss1States.INJURED:
                 UpdateInjuredBehavior();
@@ -50,28 +69,26 @@ public class Boss1 : MonoBehaviour
 
     void UpdateInactiveBehavior()
     {
-        if (Vector2.Distance(transform.position, sigma.position) < combatRange)
+        if (Vector2.Distance(transform.position, sigmaTransform.position) < activationRange)
             currentState = Boss1States.COMBAT;
     }
 
-    void UpdateAttackingBehavior()
+    void UpdateCombatBehavior()
     {
-        if (sigma.position.x < transform.position.x) myRenderer.flipX = false;
-        else myRenderer.flipX = true;
-
-        Vector2.MoveTowards(transform.position, sigma.position, speed * Time.deltaTime);
-
-        if (sigma.position.y > (transform.position.y + verticalReach))
+        if (sigmaTransform.position.y > (transform.position.y + verticalReach))
         {
-            // prowl around, frustrated
+            UpdatePatrol();
+            if (canStomp) StartCoroutine(StompRandomly());
             // stomp every once in a while
         }
-        else if (sigma.position.y < (transform.position.y - verticalReach))
-        {
-            // prowl around, frustrated
-        }
+        else if (sigmaTransform.position.y < (transform.position.y - verticalReach)) UpdatePatrol();
         else
         {
+            if (sigmaTransform.position.x < transform.position.x) myRenderer.flipX = false;
+            else myRenderer.flipX = true;
+
+            myRigidbody.MovePosition(transform.position + (myRenderer.flipX ? transform.right : -transform.right) * speed * Time.deltaTime); // placeholder
+
             // move toward sigma if sigma is too far away, otherwise keep sigma in range of punch attacks
             // stomp every once in a while if sigma is not quite in range of punch
             // punch every once in a while
@@ -82,6 +99,15 @@ public class Boss1 : MonoBehaviour
     void UpdateInjuredBehavior()
     {
         // should probably stay empty, since mega man can't do anything while injured and the timer was started in OnCollisionEnter2D
+    }
+
+    void UpdatePatrol()
+    {
+        if (Vector2.Distance(transform.position, targetPos) < 3)
+            targetPos = (targetPos == navPointLeft.position ? navPointRight.position : navPointLeft.position);
+
+        myRenderer.flipX = (targetPos == navPointLeft.position ? false : true);
+        myRigidbody.MovePosition(transform.position + (targetPos == navPointLeft.position ? -transform.right : transform.right) * speed * Time.deltaTime); // placeholder
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -110,22 +136,13 @@ public class Boss1 : MonoBehaviour
         // this function might get deleted, since death is an event, not a state
     }
 
-    void Attack(Attacks attack)
+    IEnumerator StompRandomly()
     {
-        switch (attack)
-        {
-            case Attacks.PUNCH:
-                myAnim.SetTrigger("Punch");
-                break;
-            case Attacks.STOMP:
-                myAnim.SetTrigger("Stomp");
-                if (OnBoss1Stomp != null) OnBoss1Stomp();
-                // instantiate shockwave
-                break;
-            case Attacks.CHARGE:
-                myAnim.SetTrigger("Charge");
-                break;
-        }
+        canStomp = false;
+        yield return new WaitForSeconds(Random.Range(stompFrequencyMin + 0f, stompFrequencyMax + 1f));
+        myRigidbody.AddForce(Vector2.up * stompForce);
+        if (OnBoss1Stomp != null) OnBoss1Stomp();
+        canStomp = true;
     }
 
     IEnumerator InjurySequence()
