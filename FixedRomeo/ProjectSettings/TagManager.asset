@@ -27,7 +27,7 @@ TagManager:
   - Enemies
   - Pickups
   - Ground
-  - Boss1Wall
+  - 
   - 
   - 
   - 
@@ -64,4 +64,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 149272721
+    locked: 0
+  - name: OverUI
+    uniqueID: 2388555039
     locked: 0
