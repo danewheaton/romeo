@@ -135,13 +135,13 @@ namespace UnityStandardAssets._2D
                 isOnWall = true;
                 m_Rigidbody2D.AddForce(Vector2.down * Downthrust);
                 
-                Debug.Log("Wall Hit");
+                //Debug.Log("Wall Hit");
             }
 
             if (WallHit.collider.gameObject.tag != "Wall")
             {
                 isOnWall = false;
-                Debug.Log("Not a Wall");
+                //Debug.Log("Not a Wall");
                 
             }
         }

@@ -18,7 +18,7 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    GameStates currentState = GameStates.TITLE_MENU;
+    GameStates currentState;
 
     void Awake()
     {
@@ -30,8 +30,15 @@ public class GameStateManager : MonoBehaviour
         Cursor.visible = false;
     }
 
+    private void Start()
+    {
+        currentState = SceneManager.GetActiveScene().buildIndex == 0 ? GameStates.TITLE_MENU : GameStates.GAMEPLAY;
+    }
+
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+
         switch (currentState)
         {
             case GameStates.TITLE_MENU:

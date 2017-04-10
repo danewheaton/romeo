@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour
 {
-	[SerializeField] float spawnTime = 4, spawnDelayMin = 1, spawnDelayMax = 3;
+	[SerializeField] float spawnDelayMin = 1, spawnDelayMax = 3;
     [SerializeField] GameObject[] enemies;
     [SerializeField] int EnemyCount = 0, MaxEnemies = 3;
     [SerializeField] Transform closestCheckpoint;
@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
-        if (EnemyCount < MaxEnemies && closeEnoughToSpawn)
+        if (EnemyCount < MaxEnemies)
         {
             int enemyIndex = Random.Range(0, enemies.Length);
             int direction = Random.Range(0, 1);
@@ -42,6 +42,5 @@ public class Spawner : MonoBehaviour
     void GetLatestCheckpointReached(Transform checkpoint)
     {
         if (checkpoint == closestCheckpoint) closeEnoughToSpawn = true;
-        print("closeEnoughToSpawn should be true, and it is: " + closeEnoughToSpawn);
     }
 }

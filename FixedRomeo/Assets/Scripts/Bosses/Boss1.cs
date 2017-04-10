@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum Boss1States { INACTIVE, COMBAT, CHARGE_ATTACK, INJURED, DEAD }
+public enum Boss1States { INACTIVE, COMBAT, CHARGE_ATTACK, INJURED }
 public enum Attacks { PUNCH, STOMP, CHARGE }    // TODO: replace weird random coroutines with a function that takes in these - mega man can only do one attack at a time, after all
 
 public class Boss1 : MonoBehaviour
@@ -56,6 +56,8 @@ public class Boss1 : MonoBehaviour
 	
 	void Update ()
     {
+        // I think there's too much getting called every frame - especially attacks
+
         switch (currentState)
         {
             case Boss1States.INACTIVE:
@@ -69,10 +71,6 @@ public class Boss1 : MonoBehaviour
                 break;
             case Boss1States.INJURED:
                 UpdateInjuredBehavior();
-                break;
-            case Boss1States.DEAD:
-                // TODO: add a check so Die doesn't get called every frame when the boss dies, or just delete this from the states
-                UpdateDie();
                 break;
         }
     }
@@ -158,11 +156,6 @@ public class Boss1 : MonoBehaviour
         }
     }
 
-    void UpdateDie()
-    {
-        // this function might get deleted, since death is an event, not a state
-    }
-
     IEnumerator AttackRandomly(Attacks attackType)
     {
         canAttack = false;
@@ -217,7 +210,6 @@ public class Boss1 : MonoBehaviour
         float timer = 3;
         while (elapsedTime < timer)
         {
-            print("should change color");
             myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / timer);
 
             elapsedTime += Time.deltaTime;
