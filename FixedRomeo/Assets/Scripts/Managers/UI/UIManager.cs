@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class UIManager : MonoBehaviour, IDamageable
 {
     SigmaTriggers ST;
 
@@ -27,10 +27,9 @@ public class UIManager : MonoBehaviour
         HealthSlider.value = PlayerHealth;
     }
 
-    void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        PlayerHealth -= 10f;
-
+        PlayerHealth -= damage;
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -42,7 +41,7 @@ public class UIManager : MonoBehaviour
 
                 if (PlayerHealth > 0f)
                 {
-                    TakeDamage();
+                    TakeDamage(10);
                     lastHitTime = Time.time - 1f;
                 }
 

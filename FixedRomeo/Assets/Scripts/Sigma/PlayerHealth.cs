@@ -12,12 +12,6 @@ public class PlayerHealth : MonoBehaviour
 
     float lastHitTime;
 
-    void Start ()
-	{
-    
-	}
-
-
 	void OnCollisionEnter2D (Collision2D col)
 	{
 		if(col.gameObject.tag == "Enemy")
