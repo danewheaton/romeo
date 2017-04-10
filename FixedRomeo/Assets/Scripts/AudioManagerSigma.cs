@@ -1,27 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets._2D;
 
 //So that way any script this Audio Manager is attached to will have an AudioSource with it
 [RequireComponent(typeof(AudioSource))]
 public class AudioManagerSigma : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip[] audioClips = new AudioClip[7];
+    private AudioClip[] audioClips = new AudioClip[5];
 
     [SerializeField]
     private AudioSource audioSource;
     [SerializeField]
     private AudioSource shootingAudioSource;
 
+    private PlatformerCharacter2D movementData;
+
 	// Use this for initialization
 	void Start ()
     {
+        movementData = GetComponent<PlatformerCharacter2D>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && (movementData.ReturnIsOnWall() || movementData.ReturnIsOnGround()))
         {
             PlayJump();
         }
@@ -37,7 +41,7 @@ public class AudioManagerSigma : MonoBehaviour
 	}
 
     //Each sound has a different function, in case anything wants to be done with things like the audio mixer, reverb, etc
-    private void PlayJump()
+    public void PlayJump()
     {
         //Jump is the first element in the audioclips array
         audioSource.clip = audioClips[0];

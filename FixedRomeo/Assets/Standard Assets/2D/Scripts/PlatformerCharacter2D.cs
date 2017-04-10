@@ -145,5 +145,15 @@ namespace UnityStandardAssets._2D
                 
             }
         }
+
+        public bool ReturnIsOnGround()
+        {
+            return m_Grounded;
+        }
+
+        public bool ReturnIsOnWall()
+        {
+            return isOnWall;
+        }
     }
 }
