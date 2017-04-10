@@ -9,8 +9,9 @@ public class SigmaTriggers : MonoBehaviour
     public delegate void ReachCheckpoint(Transform checkpoint);
     public static event ReachCheckpoint OnReachedCheckpoint;
     #endregion
-
-    Transform mostRecentCheckpoint;
+    [SerializeField]
+    GameObject Player;
+    [SerializeField] Transform mostRecentCheckpoint;
 
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -25,4 +26,12 @@ public class SigmaTriggers : MonoBehaviour
                 break;
         }
     }
+
+
+    public void PlayerDeath ()
+    {
+
+        Player.transform.position = mostRecentCheckpoint.position;
+    }
+   
 }

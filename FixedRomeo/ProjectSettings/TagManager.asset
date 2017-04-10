@@ -18,6 +18,8 @@ TagManager:
   - BossArena
   - Checkpoint
   - Boss
+  - BossTrigger
+  - Killzone
   layers:
   - Default
   - TransparentFX

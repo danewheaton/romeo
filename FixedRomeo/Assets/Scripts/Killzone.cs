@@ -4,10 +4,20 @@ using System.Collections;
 
 public class Killzone : MonoBehaviour
 {
+    SigmaTriggers ST;
+    UIManager UI;
+
+    void Start ()
+    {
+        UI = GetComponent<UIManager>();
+        ST = GetComponent<SigmaTriggers>();
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player") StartCoroutine(ReloadGame());
-        Destroy(other.gameObject);
+        if (other.gameObject.tag == "Player")
+        {
+            UI.PlayersDeath();
+        }
     }
 
     IEnumerator ReloadGame()

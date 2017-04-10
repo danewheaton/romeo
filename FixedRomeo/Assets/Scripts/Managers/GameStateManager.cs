@@ -6,7 +6,7 @@ public enum GameStates { TITLE_MENU, GAMEPLAY }
 
 public class GameStateManager : MonoBehaviour
 {
-    public static bool won; // COREY: when the boss is dead, set this to true
+    public static bool won; // COREY: when the boss is dead, set this to true      OK
 
     static GameStateManager instance = null;
     public static GameStateManager Instance
