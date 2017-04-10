@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 // IF THE BOSS'S HEALTH RESETS BACK TO 100% AFTER HE RECOVERS, IT'S BECAUSE OF SETACTIVE(TRUE/FALSE)
 
-public class BossHealth : MonoBehaviour
+public class BossHealth : MonoBehaviour, IDamageable
 {
     [SerializeField]
     public Slider HealthSlider;
@@ -23,7 +23,7 @@ public class BossHealth : MonoBehaviour
         if (health <= 0 && !dead) Die();
     }
 
-    public void Hurt(int hurtAmount)
+    public void TakeDamage(int hurtAmount)
     {
         health -= hurtAmount;
     }

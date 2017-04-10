@@ -1169,48 +1169,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
---- !u!1 &332245419
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 332245420}
-  - 114: {fileID: 332245421}
-  m_Layer: 0
-  m_Name: stalactiteSpawner1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &332245420
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 332245419}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 315.4, y: -78.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 806234128}
-  m_RootOrder: 0
---- !u!114 &332245421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 332245419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c1ceeae520be774ab0a6af2c04b9a05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stalactitePrefab: {fileID: 50000010330324410, guid: 3cdacebc469ffc44c9b524342e010d05,
-    type: 2}
 --- !u!1 &345248343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,7 +1501,7 @@ Transform:
   - {fileID: 585105340}
   - {fileID: 679757520}
   m_Father: {fileID: 1524584990}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1 &447642565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,6 +1856,11 @@ SpriteRenderer:
   m_Color: {r: 0.09411766, g: 0.09411766, b: 0.09411766, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!4 &576896157 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000014187416160, guid: 6a138fd9ad1d6994598f1cb04214b365,
+    type: 2}
+  m_PrefabInternal: {fileID: 1297125885}
 --- !u!1 &579346020
 GameObject:
   m_ObjectHideFlags: 0
@@ -2910,87 +2873,11 @@ EdgeCollider2D:
   m_Points:
   - {x: -1.5690455, y: 0.016445994}
   - {x: 1.0262985, y: -0.00000011920929}
---- !u!1 &803482873
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 803482874}
-  - 114: {fileID: 803482875}
-  m_Layer: 0
-  m_Name: stalactiteSpawner6
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &803482874
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 803482873}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 336.56, y: -78.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 806234128}
-  m_RootOrder: 5
---- !u!114 &803482875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 803482873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c1ceeae520be774ab0a6af2c04b9a05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stalactitePrefab: {fileID: 50000013525615610, guid: 85f64f6042712b34fa4b3d6a984d7d13,
-    type: 2}
 --- !u!1 &804185435 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000011463551024, guid: 399ba676488199540ac965cc1782c38b,
     type: 2}
   m_PrefabInternal: {fileID: 1184968757}
---- !u!1 &806234127
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 806234128}
-  m_Layer: 0
-  m_Name: stalactiteSpawners
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &806234128
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 806234127}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 332245420}
-  - {fileID: 1103034306}
-  - {fileID: 1328781627}
-  - {fileID: 977219046}
-  - {fileID: 933013419}
-  - {fileID: 803482874}
-  m_Father: {fileID: 1524584990}
-  m_RootOrder: 0
 --- !u!1 &819249520
 GameObject:
   m_ObjectHideFlags: 0
@@ -3319,95 +3206,16 @@ BoxCollider2D:
   m_Offset: {x: 0.23175216, y: 0.0035901654}
   serializedVersion: 2
   m_Size: {x: 0.53650063, y: 2.0698547}
---- !u!1 &933013418
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 933013419}
-  - 114: {fileID: 933013420}
-  m_Layer: 0
-  m_Name: stalactiteSpawner5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &933013419
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 933013418}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 332.69, y: -78.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 806234128}
-  m_RootOrder: 4
---- !u!114 &933013420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 933013418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c1ceeae520be774ab0a6af2c04b9a05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stalactitePrefab: {fileID: 50000013926778070, guid: 60a09c35f5bb5d04192528d0006b313c,
-    type: 2}
 --- !u!1 &940673888 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000012866609948, guid: 399ba676488199540ac965cc1782c38b,
     type: 2}
   m_PrefabInternal: {fileID: 1184968757}
---- !u!1 &977219045
+--- !u!1 &965399775 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 977219046}
-  - 114: {fileID: 977219047}
-  m_Layer: 0
-  m_Name: stalactiteSpawner4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &977219046
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 977219045}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 328.22, y: -78.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 806234128}
-  m_RootOrder: 3
---- !u!114 &977219047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 977219045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c1ceeae520be774ab0a6af2c04b9a05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stalactitePrefab: {fileID: 50000010366081270, guid: 23bb636003abed64c80c822c00baf449,
+  m_PrefabParentObject: {fileID: 1000011670173634, guid: d44125c4608e4fd4f8a14d6bc9654c45,
     type: 2}
+  m_PrefabInternal: {fileID: 1806309539}
 --- !u!1 &1003045209
 GameObject:
   m_ObjectHideFlags: 0
@@ -3605,48 +3413,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 444225427}
   m_RootOrder: 2
---- !u!1 &1103034305
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1103034306}
-  - 114: {fileID: 1103034307}
-  m_Layer: 0
-  m_Name: stalactiteSpawner2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1103034306
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1103034305}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 320.13, y: -79.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 806234128}
-  m_RootOrder: 1
---- !u!114 &1103034307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1103034305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c1ceeae520be774ab0a6af2c04b9a05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stalactitePrefab: {fileID: 50000012216375880, guid: 0d307ae75c8a562438c8f7404e6e4c60,
-    type: 2}
 --- !u!1 &1111724194 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000011099987480, guid: 399ba676488199540ac965cc1782c38b,
@@ -3797,6 +3563,11 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!4 &1156513892 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000012937592650, guid: 6a138fd9ad1d6994598f1cb04214b365,
+    type: 2}
+  m_PrefabInternal: {fileID: 1297125885}
 --- !u!1001 &1184968757
 Prefab:
   m_ObjectHideFlags: 0
@@ -4942,51 +4713,34 @@ Prefab:
       propertyPath: fallingPlatforms.Array.data[6]
       value: 
       objectReference: {fileID: 370638640}
+    - target: {fileID: 114000013703357844, guid: 6a138fd9ad1d6994598f1cb04214b365,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 2020705394}
+    - target: {fileID: 114000013689781098, guid: 6a138fd9ad1d6994598f1cb04214b365,
+        type: 2}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 2020705398}
+    - target: {fileID: 114000013689781098, guid: 6a138fd9ad1d6994598f1cb04214b365,
+        type: 2}
+      propertyPath: shootingAudioSource
+      value: 
+      objectReference: {fileID: 2020705397}
+    - target: {fileID: 114000011526230168, guid: 6a138fd9ad1d6994598f1cb04214b365,
+        type: 2}
+      propertyPath: Wallcheck
+      value: 
+      objectReference: {fileID: 576896157}
+    - target: {fileID: 114000011526230168, guid: 6a138fd9ad1d6994598f1cb04214b365,
+        type: 2}
+      propertyPath: m_GroundCheck
+      value: 
+      objectReference: {fileID: 1156513892}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a138fd9ad1d6994598f1cb04214b365, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1328781626
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1328781627}
-  - 114: {fileID: 1328781628}
-  m_Layer: 0
-  m_Name: stalactiteSpawner3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1328781627
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1328781626}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 324.5, y: -78.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 806234128}
-  m_RootOrder: 2
---- !u!114 &1328781628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1328781626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c1ceeae520be774ab0a6af2c04b9a05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stalactitePrefab: {fileID: 50000010853093608, guid: e8ec1975312b7cc40a81fa1e3c47938c,
-    type: 2}
 --- !u!1001 &1349082259
 Prefab:
   m_ObjectHideFlags: 0
@@ -5137,6 +4891,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8401a12a35e9d44efbd45e0bba1d4969, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1417337313 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000014216418570, guid: d44125c4608e4fd4f8a14d6bc9654c45,
+    type: 2}
+  m_PrefabInternal: {fileID: 1806309539}
 --- !u!1 &1503428821
 GameObject:
   m_ObjectHideFlags: 0
@@ -5200,7 +4959,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 806234128}
   - {fileID: 444225427}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -6157,6 +5915,16 @@ Prefab:
       propertyPath: HealthSlider
       value: 
       objectReference: {fileID: 328062342}
+    - target: {fileID: 114000013646207150, guid: d44125c4608e4fd4f8a14d6bc9654c45,
+        type: 2}
+      propertyPath: blastWave
+      value: 
+      objectReference: {fileID: 965399775}
+    - target: {fileID: 114000013646207150, guid: d44125c4608e4fd4f8a14d6bc9654c45,
+        type: 2}
+      propertyPath: weakSpot
+      value: 
+      objectReference: {fileID: 1417337313}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d44125c4608e4fd4f8a14d6bc9654c45, type: 2}
   m_IsPrefabParent: 0
@@ -6790,6 +6558,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c0014f342917f04198e4780c3664856, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2020705394 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000012562033122, guid: 6a138fd9ad1d6994598f1cb04214b365,
+    type: 2}
+  m_PrefabInternal: {fileID: 1297125885}
+--- !u!82 &2020705397 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82000011959127672, guid: 6a138fd9ad1d6994598f1cb04214b365,
+    type: 2}
+  m_PrefabInternal: {fileID: 1297125885}
+--- !u!82 &2020705398 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82000013518518662, guid: 6a138fd9ad1d6994598f1cb04214b365,
+    type: 2}
+  m_PrefabInternal: {fileID: 1297125885}
 --- !u!1 &2071704374
 GameObject:
   m_ObjectHideFlags: 0

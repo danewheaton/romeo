@@ -13,18 +13,18 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.GetComponent<IDamageable>() != null)
         {
-            other.gameObject.GetComponent<Enemy>().Hurt(damageModifier);
+            other.gameObject.GetComponent<IDamageable>().TakeDamage(damageModifier);
             OnExplode();
             if (damageModifier < 3) Destroy(gameObject);
         }
-        else if (other.gameObject.tag == "Boss")
-        {
-            other.gameObject.GetComponentInChildren<BossHealth>().Hurt(damageModifier);
-            OnExplode();
-            Destroy(gameObject);
-        }
+        //else if (other.gameObject.tag == "Boss")
+        //{
+        //    other.gameObject.GetComponentInChildren<BossHealth>().TakeDamage(damageModifier);
+        //    OnExplode();
+        //    Destroy(gameObject);
+        //}
         else if (other.gameObject.tag != "Player")
         {
             OnExplode();
