@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class Cutscene : MonoBehaviour
 {
     [SerializeField]
-    private string cutsceneString;
-    [SerializeField]
     private float textDefaultWaitTime;
     [SerializeField]
     private float spedUpTextWaitTime;
@@ -21,6 +19,7 @@ public class Cutscene : MonoBehaviour
     [SerializeField]
     private CutsceneManager cutsceneManager;
 
+    private string cutsceneString;
     private Text cutsceneText;
     private char[] cutsceneTextChars;
     private WaitForSeconds textAnimationInterval;
@@ -97,5 +96,10 @@ public class Cutscene : MonoBehaviour
         {
             textAnimationInterval = new WaitForSeconds(spedUpTextWaitTime);
         }
+    }
+
+    public void SetCutsceneString(string assignedString)
+    {
+        cutsceneString = assignedString;
     }
 }

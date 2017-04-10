@@ -757,7 +757,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e37508d0fa88894babf7c87462c4757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutsceneString: Where am I? How did I get here?
   textDefaultWaitTime: 0.05
   spedUpTextWaitTime: 0
   cutsceneFadeOutTime: 2
@@ -1018,8 +1017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e37508d0fa88894babf7c87462c4757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutsceneString: And so X defeated all essence of the Sigma virus, defeating the
-    original good Sigma AI with it. Or so he thought...
   textDefaultWaitTime: 0.05
   spedUpTextWaitTime: 0
   cutsceneFadeOutTime: 2
@@ -1663,8 +1660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e37508d0fa88894babf7c87462c4757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutsceneString: That's right, I was created by Dr. Cain to fight the Mavericks!
-    He's probably in danger, I need to find him.
   textDefaultWaitTime: 0.05
   spedUpTextWaitTime: 0
   cutsceneFadeOutTime: 2
@@ -2349,7 +2344,32 @@ MonoBehaviour:
   - {fileID: 763771070}
   - {fileID: 543831393}
   - {fileID: 1250549530}
+  cutsceneStringsEnglish:
+  - This is the end for you, Sigma. You won't make any more Mavericks this time. Your
+    reign of terror ends here.
+  - And so X defeated all essence of the Sigma virus, defeating the original good
+    Sigma AI with it. Or so he thought...
+  - Where am I? How did I get here?
+  - That's right, I was created by Dr. Cain to fight the Mavericks! He's probably
+    in danger, I need to find him.
+  cutsceneStringsSpanish:
+  - This is the end para tu, Sigma. You won't make any more Mavericks this time. Your
+    reign of terror ends here.
+  - And so X defeated all essence of the Sigma virus, defeating the original good
+    Sigma AI with it. Or so he thought...
+  - Where am I? How did I get here?
+  - That's right, I was created by Dr. Cain to fight the Mavericks! He's probably
+    in danger, I need to find him.
+  cutsceneStringsPolish:
+  - "To jest koniec ciebie, Sigma. Nie bedziez juz budowal ani Mavericks. Twoja Rz\u0105dy
+    terroru si\u0119 konczy tutaj."
+  - "I X pokonal wszystkie istoty virusa Sigma, pokonuj\u0105 wszystkie orginalny
+    AI Sigma. Albo tak pomy\u015Bla\u0142..."
+  - "Gdzie Ja jestem? Skont si\u0119 tu dosta\u0142em?"
+  - "Tak jest, by\u0142em stworzony przez Dr. Cain \u017Ceby walczyc z Maverickami!
+    Chyba jest w k\u0142opotczie, potrzebuj\u0119 Go znale\u017A\u0107 "
   nextScene: _Scene01
+  debugLanguage: 0
 --- !u!1 &1830786226
 GameObject:
   m_ObjectHideFlags: 0
@@ -2434,8 +2454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e37508d0fa88894babf7c87462c4757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutsceneString: This is the end for you, Sigma. You won't make any more Mavericks
-    this time. Your reign of terror ends here.
   textDefaultWaitTime: 0.05
   spedUpTextWaitTime: 0
   cutsceneFadeOutTime: 2
