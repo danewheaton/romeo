@@ -2435,7 +2435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneString: This is the end for you, Sigma. You won't make any more Mavericks
-    this time. Your reign of terror ends here
+    this time. Your reign of terror ends here.
   textDefaultWaitTime: 0.05
   spedUpTextWaitTime: 0
   cutsceneFadeOutTime: 2

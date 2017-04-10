@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class SigmaTriggers : MonoBehaviour
@@ -12,6 +13,20 @@ public class SigmaTriggers : MonoBehaviour
     [SerializeField]
     GameObject Player;
     [SerializeField] Transform mostRecentCheckpoint;
+    [SerializeField]
+    GameObject[] fallingPlatforms;
+
+    Vector3[] platformOriginalPositions;
+
+    void Start()
+    {
+        platformOriginalPositions = new Vector3[fallingPlatforms.Length];
+
+        for (int i = 0; i < fallingPlatforms.Length; i++)
+        {
+            platformOriginalPositions[i] = fallingPlatforms[i].transform.position;
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -30,8 +45,12 @@ public class SigmaTriggers : MonoBehaviour
 
     public void PlayerDeath ()
     {
-
         Player.transform.position = mostRecentCheckpoint.position;
+        for (int i = 0; i < fallingPlatforms.Length; i++)
+        {
+            fallingPlatforms[i].transform.position = platformOriginalPositions[i];
+            fallingPlatforms[i].GetComponent<Rigidbody2D>().isKinematic = true;
+        }
     }
    
 }
