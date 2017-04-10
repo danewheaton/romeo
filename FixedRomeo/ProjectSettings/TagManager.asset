@@ -16,6 +16,8 @@ TagManager:
   - Wall
   - Boss1Wall
   - BossArena
+  - Checkpoint
+  - Boss
   layers:
   - Default
   - TransparentFX

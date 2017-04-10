@@ -42,7 +42,7 @@ namespace UnityStandardAssets._2D
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             // This can be done using layers instead but Sample Assets will not overwrite your project settings.
             RaycastHit2D GroundHit = Physics2D.Raycast(m_GroundCheck.position, Vector2.down, k_GroundedRadius);
-            Debug.Log("Hit" + GroundHit.collider.name);
+            //Debug.Log("Hit" + GroundHit.collider.name);
             if (GroundHit.collider.gameObject.tag == "ground" )
             {
                 m_Grounded = true;
