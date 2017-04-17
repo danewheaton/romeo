@@ -4,6 +4,7 @@ using System.Collections;
 public class Projectile : MonoBehaviour
 {
     public int damageModifier;
+    public float bigBlastLifespan = .3f;
     public GameObject explosionPrefab;
 
     void Start()
@@ -18,6 +19,7 @@ public class Projectile : MonoBehaviour
             other.gameObject.GetComponent<IDamageable>().TakeDamage(damageModifier);
             OnExplode();
             if (damageModifier < 3) Destroy(gameObject);
+            else Invoke("DestroyBigBlast", bigBlastLifespan);
         }
         //else if (other.gameObject.tag == "Boss")
         //{
@@ -29,7 +31,13 @@ public class Projectile : MonoBehaviour
         {
             OnExplode();
             if (damageModifier < 3) Destroy(gameObject);
+            else Invoke("DestroyBigBlast", bigBlastLifespan);
         }
+    }
+
+    void DestroyBigBlast()
+    {
+        Destroy(gameObject);
     }
 
     void OnExplode()

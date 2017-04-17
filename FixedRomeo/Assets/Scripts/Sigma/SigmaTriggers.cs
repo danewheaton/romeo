@@ -16,15 +16,17 @@ public class SigmaTriggers : MonoBehaviour
     [SerializeField]
     GameObject[] fallingPlatforms;
 
-    Vector3[] platformOriginalPositions;
+    Vector3[] platformOriginalPositions, platformOriginalEulers;
 
     void Start()
     {
         platformOriginalPositions = new Vector3[fallingPlatforms.Length];
+        platformOriginalEulers = new Vector3[fallingPlatforms.Length];
 
         for (int i = 0; i < fallingPlatforms.Length; i++)
         {
             platformOriginalPositions[i] = fallingPlatforms[i].transform.position;
+            platformOriginalEulers[i] = fallingPlatforms[i].transform.eulerAngles;
         }
     }
 
@@ -49,6 +51,7 @@ public class SigmaTriggers : MonoBehaviour
         for (int i = 0; i < fallingPlatforms.Length; i++)
         {
             fallingPlatforms[i].transform.position = platformOriginalPositions[i];
+            fallingPlatforms[i].transform.eulerAngles = platformOriginalEulers[i];
             fallingPlatforms[i].GetComponent<Rigidbody2D>().isKinematic = true;
         }
     }

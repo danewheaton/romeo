@@ -333,4 +333,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageModifier: 1
+  bigBlastLifespan: 0.3
   explosionPrefab: {fileID: 100000, guid: 42404bf7d14c342f69690c9961a7530d, type: 2}
