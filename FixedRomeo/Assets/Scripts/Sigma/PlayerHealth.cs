@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
-		if(col.gameObject.tag == "Enemy")
+		if(col.gameObject.tag == "Enemy" || col.gameObject.tag == "Boss")
 		{
 			if (Time.time > lastHitTime + repeatDamagePeriod) // if past cool-down time
 			{

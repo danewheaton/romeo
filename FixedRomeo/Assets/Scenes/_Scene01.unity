@@ -3323,6 +3323,20 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000011670173634, guid: d44125c4608e4fd4f8a14d6bc9654c45,
     type: 2}
   m_PrefabInternal: {fileID: 1806309539}
+--- !u!61 &965399778
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 965399775}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 4.5, y: 1.03}
 --- !u!1 &1003045209
 GameObject:
   m_ObjectHideFlags: 0
@@ -4988,6 +5002,20 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000014216418570, guid: d44125c4608e4fd4f8a14d6bc9654c45,
     type: 2}
   m_PrefabInternal: {fileID: 1806309539}
+--- !u!58 &1417337317
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417337313}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
 --- !u!1 &1503428821
 GameObject:
   m_ObjectHideFlags: 0
@@ -6017,6 +6045,10 @@ Prefab:
       propertyPath: weakSpot
       value: 
       objectReference: {fileID: 1417337313}
+    - target: {fileID: 1000011670173634, guid: d44125c4608e4fd4f8a14d6bc9654c45, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d44125c4608e4fd4f8a14d6bc9654c45, type: 2}
   m_IsPrefabParent: 0

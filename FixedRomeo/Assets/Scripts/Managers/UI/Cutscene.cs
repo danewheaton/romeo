@@ -26,7 +26,7 @@ public class Cutscene : MonoBehaviour
     private WaitForSeconds cutsceneFadeOutInterval;
     private Image canvasImage;
     private AudioSource charBlipAudio;
-    private bool canContinue = false;
+    private bool canContinue = false, polish;
 
     void Awake()
     {
@@ -87,9 +87,12 @@ public class Cutscene : MonoBehaviour
 
     private void SpeedThroughAndDisableCutscene()
     {
+        if (Input.GetButtonDown("Polish")) polish = true;
+
         if (Input.GetButtonDown("Jump") && canContinue)
         {
             StartCoroutine(DisableCutscene());
+            if (polish) FindObjectOfType<DaneTemp_Cutscene>().PlayAdamLines();
         }
 
         if (Input.GetButtonDown("Jump") && !canContinue)

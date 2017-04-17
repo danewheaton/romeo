@@ -71,7 +71,24 @@ public class UIManager : MonoBehaviour, IDamageable
         if (col.gameObject.tag == "Killzone")
         {
             Die();
+        }
+        else if (col.gameObject.tag == "Enemy")
+        {
+            if (Time.time > lastHitTime + repeatDamagePeriod) // if past cool-down time
+            {
 
+                if (PlayerHealth > 0f)
+                {
+                    TakeDamage(10);
+                    lastHitTime = Time.time - 1f;
+                }
+
+                if (PlayerHealth <= 0f)
+                {
+                    Die();
+
+                }
+            }
         }
     }
 

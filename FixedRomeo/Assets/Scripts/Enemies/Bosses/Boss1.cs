@@ -222,6 +222,7 @@ public class Boss1 : MonoBehaviour
     IEnumerator InjurySequence()
     {
         weakSpot.SetActive(true);
+        myRigidbody.velocity = Vector2.zero;
 
         #region blink red
         float elapsedTime = 0;
