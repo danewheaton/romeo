@@ -42,7 +42,7 @@ public class PlayerHealth : MonoBehaviour
 	}
 
 
-	void TakeDamage (Transform enemy)
+	void TakeDamage (Transform enemy)   // TODO: why isn't the health logic here? move it out of UIManager plz
 	{
 		// create a vector that's from the enemy to the player with an upwards boost
 		Vector3 hurtVector = transform.position - enemy.position + Vector3.up * 5f;
@@ -50,13 +50,8 @@ public class PlayerHealth : MonoBehaviour
 		// add a force to the player in the direction of the vector and multiply by the hurtForce
 		GetComponent<Rigidbody2D>().AddForce(hurtVector * hurtForce);
         
-
-	
-        
 		int i = Random.Range (0, ouchClips.Length);
 		AudioSource.PlayClipAtPoint(ouchClips[i], transform.position);
 	}
-
-
 
 }

@@ -43,9 +43,17 @@ public class Enemy : MonoBehaviour, IDamageable
 	public void TakeDamage(int hurtAmount)
 	{
 		health -= hurtAmount;
-	}
-	
-	void Die()
+
+        GetComponent<SpriteRenderer>().color = Color.red;
+        Invoke("ChangeSpriteColorBack", .1f);
+    }
+
+    void ChangeSpriteColorBack()
+    {
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    void Die()
 	{
         #region enemy falls through ground - placeholder effect
         Collider2D[] cols = GetComponents<Collider2D>();

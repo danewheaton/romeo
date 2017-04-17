@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour, IDamageable
     public Slider HealthSlider;
     [SerializeField]
     public float PlayerHealth, repeatDamagePeriod = 2f, hurtForce = 10f, damageAmount = 10f;
+    [SerializeField]
+    Image panel;
 
     float lastHitTime;
 
@@ -30,6 +32,16 @@ public class UIManager : MonoBehaviour, IDamageable
     public void TakeDamage(int damage)
     {
         PlayerHealth -= damage;
+
+        GetComponent<SpriteRenderer>().color = Color.red;
+        panel.gameObject.SetActive(true);
+        Invoke("ChangeSpriteColorBack", .1f);
+    }
+
+    void ChangeSpriteColorBack()
+    {
+        panel.gameObject.SetActive(false);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     void OnCollisionEnter2D(Collision2D col)
