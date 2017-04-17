@@ -15,9 +15,11 @@ namespace UnityStandardAssets._2D
         [SerializeField] float WallhitDistance = 1f , Downthrust;
         [SerializeField] Transform Wallcheck;
         private bool isOnWall = false;
+        [SerializeField]
+        LayerMask m_goundCheckMask;
 
         [SerializeField] private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
-        const float k_GroundedRadius = .4f; // Radius of the overlap circle to determine if grounded
+       [SerializeField] public const float k_GroundedRadius = 5.0f; // Radius of the overlap circle to determine if grounded
         [SerializeField] private bool m_Grounded;            // Whether or not the player is grounded.
         private Transform m_CeilingCheck;   // A position marking where to check for ceilings
         const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
@@ -36,17 +38,18 @@ namespace UnityStandardAssets._2D
 
         private void FixedUpdate()
         {
-            WallCheck();
+            //WallCheck();
             m_Grounded = false;
 
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             // This can be done using layers instead but Sample Assets will not overwrite your project settings.
-            RaycastHit2D GroundHit = Physics2D.Raycast(m_GroundCheck.position, Vector2.down, k_GroundedRadius);
-            //Debug.Log("Hit" + GroundHit.collider.name);
-            if (GroundHit.collider.gameObject.tag == "ground" )
+            RaycastHit2D GroundHit = Physics2D.Raycast(m_GroundCheck.position, Vector2.down, k_GroundedRadius, m_goundCheckMask );
+            //Debug.Log("Hit" + GroundHit.collider.name);  
+            if (GroundHit)
             {
                 m_Grounded = true;
             }
+            
 
 
             //    Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
@@ -126,25 +129,25 @@ namespace UnityStandardAssets._2D
             transform.localScale = theScale;
         }
 
-        void WallCheck()
-        {
-            RaycastHit2D WallHit = Physics2D.Raycast(Wallcheck.position, Vector2.right, WallhitDistance);
-            if (WallHit.collider.gameObject.tag == "Wall" && m_Grounded == false)
-            {
+        //void WallCheck()
+        //{
+        //    RaycastHit2D WallHit = Physics2D.Raycast(Wallcheck.position, Vector2.right, WallhitDistance);
+        //    if (WallHit.collider.gameObject.tag == "Wall" && m_Grounded == false)
+        //    {
 
-                isOnWall = true;
-                m_Rigidbody2D.AddForce(Vector2.down * Downthrust);
+        //        isOnWall = true;
+        //        m_Rigidbody2D.AddForce(Vector2.down * Downthrust);
                 
-                //Debug.Log("Wall Hit");
-            }
+        //        //Debug.Log("Wall Hit");
+        //    }
 
-            if (WallHit.collider.gameObject.tag != "Wall")
-            {
-                isOnWall = false;
-                //Debug.Log("Not a Wall");
+        //    if (WallHit.collider.gameObject.tag != "Wall")
+        //    {
+        //        isOnWall = false;
+        //        //Debug.Log("Not a Wall");
                 
-            }
-        }
+        //    }
+        //}
 
         public bool ReturnIsOnGround()
         {
