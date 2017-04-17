@@ -12,13 +12,22 @@ public class LevelSelectManager : MonoBehaviour
     private WaitForSeconds textDelay = new WaitForSeconds(2);
     private AudioSource menuSelectionFailed;
 
+    bool canClick = true;
+
 	// Use this for initialization
 	void Start ()
     {
         playerFeedBackText.text = "Level Unavailable";
         playerFeedBackText.gameObject.SetActive(false);
         menuSelectionFailed = GetComponent<AudioSource>();
+
+        Invoke("SetCanClick", .5f);
 	}
+
+    void SetCanClick()
+    {
+        canClick = true;
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -28,16 +37,19 @@ public class LevelSelectManager : MonoBehaviour
 
     public void LoadScene(string levelToLoad)
     {
-        Debug.Log("Loading " + levelToLoad);
-        if (levelToLoad == "empty")
+        if (canClick)
         {
-            menuSelectionFailed.Play();
-            StartCoroutine(LevelCurrentlyUnavailable());
-        }
+            Debug.Log("Loading " + levelToLoad);
+            if (levelToLoad == "empty")
+            {
+                menuSelectionFailed.Play();
+                StartCoroutine(LevelCurrentlyUnavailable());
+            }
 
-        else
-        {
-            SceneManager.LoadScene(levelToLoad);
+            else
+            {
+                SceneManager.LoadScene(levelToLoad);
+            }
         }
     }
 

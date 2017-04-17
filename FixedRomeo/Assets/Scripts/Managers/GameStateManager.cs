@@ -51,7 +51,8 @@ public class GameStateManager : MonoBehaviour
             case GameStates.GAMEPLAY:
                 if (won)
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    SceneManager.LoadScene("LevelSelect");
+                    won = false;
                 }
                 break;
         }
