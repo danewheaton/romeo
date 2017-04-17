@@ -3,10 +3,10 @@ using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
 
+public enum Language { English, Spanish, Polish }
+
 public class CutsceneManager : MonoBehaviour
 {
-    enum Language { English, Spanish, Polish}
-
     [SerializeField]
     private Cutscene[] cutscenes;
     [SerializeField]
@@ -18,15 +18,18 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField]
     private string nextScene;
     [SerializeField]
-    private Language debugLanguage;
+    private Language language;
+    [SerializeField]
+    private GameObject languageSelectorScreen;
 
     private int currentCutscene = 0;
+    private bool languageSelected = false;
 
 
 	// Use this for initialization
 	void Start ()
     {
-        PlayNextCutscene();
+        //PlayNextCutscene();
 	}
 	
 	// Update is called once per frame
@@ -42,7 +45,7 @@ public class CutsceneManager : MonoBehaviour
 
     private void SetCutsceneStringsBasedOnLanguage()
     {
-        switch (debugLanguage)
+        switch (language)
         {
             case Language.English:
                 cutscenes[currentCutscene].SetCutsceneString(cutsceneStringsEnglish[currentCutscene]);
@@ -61,16 +64,40 @@ public class CutsceneManager : MonoBehaviour
 
     public void PlayNextCutscene()
     {
-        if (currentCutscene < cutscenes.Length)
+        if (languageSelected == true)
         {
-            SetCutsceneStringsBasedOnLanguage();
-            cutscenes[currentCutscene].DisplayText();
-            currentCutscene++;
-        }
-        else
-        {
-            LoadNextScene(nextScene);
+            if (currentCutscene < cutscenes.Length)
+            {
+                SetCutsceneStringsBasedOnLanguage();
+                cutscenes[currentCutscene].DisplayText();
+                currentCutscene++;
+            }
+            else
+            {
+                LoadNextScene(nextScene);
+            }
         }
     }
 
+    public void ChangeLanguage(string setLanguage)
+    {
+        switch (setLanguage)
+        {
+            case "english":
+                language = Language.English;
+                break;
+            case "spanish":
+                language = Language.Spanish;
+                break;
+            case "polish":
+                language = Language.Polish;
+                break;
+            default:
+                language = Language.English;
+                break;
+        }
+        languageSelected = true;
+        languageSelectorScreen.SetActive(false);
+        PlayNextCutscene();
+    }
 }
