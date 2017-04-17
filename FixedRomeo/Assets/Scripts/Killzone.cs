@@ -16,7 +16,7 @@ public class Killzone : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            UI.PlayersDeath();
+            UI.Die();
         }
     }
 

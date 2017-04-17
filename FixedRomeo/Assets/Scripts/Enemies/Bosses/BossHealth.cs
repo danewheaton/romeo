@@ -28,7 +28,7 @@ public class BossHealth : MonoBehaviour, IDamageable
         health -= hurtAmount;
     }
 
-    void Die()
+    public void Die()
     {
         dead = true;
         StartCoroutine(boss1.DeathSequence());

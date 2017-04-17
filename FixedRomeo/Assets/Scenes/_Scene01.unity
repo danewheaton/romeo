@@ -667,7 +667,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1711824051}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!61 &131201594
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -850,7 +850,7 @@ MonoBehaviour:
   - {fileID: 100006, guid: 66fe2da2077f94183ae003dde85a8b1a, type: 2}
   EnemyCount: 0
   MaxEnemies: 3
-  closestCheckpoint: {fileID: 1837027787}
+  closestCheckpoint: {fileID: 0}
 --- !u!1 &238128836
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,7 +961,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1711824051}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!61 &294096108
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1620,7 +1620,7 @@ MonoBehaviour:
   - {fileID: 100006, guid: 66fe2da2077f94183ae003dde85a8b1a, type: 2}
   EnemyCount: 0
   MaxEnemies: 5
-  closestCheckpoint: {fileID: 1837027787}
+  closestCheckpoint: {fileID: 0}
 --- !u!1 &476413461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2882,7 +2882,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1711824051}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!61 &746202920
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3424,7 +3424,7 @@ MonoBehaviour:
   - {fileID: 100006, guid: 66fe2da2077f94183ae003dde85a8b1a, type: 2}
   EnemyCount: 0
   MaxEnemies: 3
-  closestCheckpoint: {fileID: 1837027787}
+  closestCheckpoint: {fileID: 0}
 --- !u!1 &1023713878
 GameObject:
   m_ObjectHideFlags: 0
@@ -4619,7 +4619,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1711824051}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!61 &1236789636
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5024,7 +5024,7 @@ MonoBehaviour:
   - {fileID: 100006, guid: 66fe2da2077f94183ae003dde85a8b1a, type: 2}
   EnemyCount: 0
   MaxEnemies: 3
-  closestCheckpoint: {fileID: 1837027787}
+  closestCheckpoint: {fileID: 0}
 --- !u!1 &1524584989
 GameObject:
   m_ObjectHideFlags: 0
@@ -5866,7 +5866,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 34340970}
-  - {fileID: 1837027787}
   - {fileID: 1236789635}
   - {fileID: 294096107}
   - {fileID: 131201593}
@@ -6021,49 +6020,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d44125c4608e4fd4f8a14d6bc9654c45, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1837027786
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1837027787}
-  - 61: {fileID: 1837027788}
-  m_Layer: 0
-  m_Name: Checkpoint
-  m_TagString: Checkpoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1837027787
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1837027786}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.6, y: 17.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1711824051}
-  m_RootOrder: 1
---- !u!61 &1837027788
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1837027786}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 10}
 --- !u!1 &1842617392
 GameObject:
   m_ObjectHideFlags: 0

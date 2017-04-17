@@ -59,7 +59,7 @@ public class UIManager : MonoBehaviour, IDamageable
 
                 if (PlayerHealth <= 0f)
                 {
-                    PlayersDeath();
+                    Die();
 
                 }
             }
@@ -70,14 +70,13 @@ public class UIManager : MonoBehaviour, IDamageable
     { 
         if (col.gameObject.tag == "Killzone")
         {
-            PlayersDeath();
+            Die();
 
         }
     }
 
-    public void PlayersDeath ()
+    public void Die ()
     {
-
         PlayerHealth = 100f;
         ST.PlayerDeath();
     }

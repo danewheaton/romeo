@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour, IDamageable
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 
-    void Die()
+    public void Die()
 	{
         #region enemy falls through ground - placeholder effect
         Collider2D[] cols = GetComponents<Collider2D>();
