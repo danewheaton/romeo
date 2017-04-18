@@ -35,7 +35,7 @@ public class UIManager : MonoBehaviour, IDamageable
 
         GetComponent<SpriteRenderer>().color = Color.red;
         panel.gameObject.SetActive(true);
-        Invoke("ChangeSpriteColorBack", .1f);
+        Invoke("ChangeSpriteColorBack", .2f);
     }
 
     void ChangeSpriteColorBack()

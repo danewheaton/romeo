@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour, IDamageable
 		health -= hurtAmount;
 
         GetComponent<SpriteRenderer>().color = Color.red;
-        Invoke("ChangeSpriteColorBack", .1f);
+        Invoke("ChangeSpriteColorBack", .2f);
     }
 
     void ChangeSpriteColorBack()
