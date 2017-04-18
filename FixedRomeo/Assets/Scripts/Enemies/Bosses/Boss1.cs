@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum Boss1States { INACTIVE, COMBAT, CHARGE_ATTACK, INJURED }
-public enum Attacks { PUNCH, STOMP, CHARGE }    // TODO: replace weird random coroutines with a function that takes in these - mega man can only do one attack at a time, after all
+// all code by DW unless otherwise noted
+
+public enum Boss1States { INACTIVE, PATROLLING, MOVING_TOWARD_SIGMA, STOMP_ATTACK, CHARGE_ATTACK, INJURED }
+public enum Attacks { STOMP, CHARGE }
 
 public class Boss1 : MonoBehaviour
 {
@@ -28,108 +30,59 @@ public class Boss1 : MonoBehaviour
     
     Boss1States currentState = Boss1States.INACTIVE;
 
-    Transform sigmaTransform;
+    
     Rigidbody2D myRigidbody;
     SpriteRenderer myRenderer;
     Animator myAnim;
+    Transform sigmaTransform;
 
-    Color originalColor;
+    Color originalRendererColor;
 
     Vector3 targetPos, originalBlastWaveScale;
-    bool canAttack = true, charging;
+    bool canAttack = true;
 
     void Start ()
     {
-        sigmaTransform = GameObject.FindGameObjectWithTag("Player").transform;
-
         myRigidbody = GetComponent<Rigidbody2D>();
         myRenderer = GetComponent<SpriteRenderer>();
         myAnim = GetComponent<Animator>();
 
-        targetPos = navPointLeft.position;
-        
+        sigmaTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
+        originalRendererColor = myRenderer.color;
         originalBlastWaveScale = blastWave.transform.localScale;
+
+        targetPos = navPointLeft.position;
+
         blastWave.SetActive(false);
         weakSpot.SetActive(false);
-        originalColor = myRenderer.color;
     }
 	
 	void Update ()
     {
-        // I think there's too much getting called every frame - especially attacks
-
         switch (currentState)
         {
             case Boss1States.INACTIVE:
                 UpdateInactiveBehavior();
                 break;
-            case Boss1States.COMBAT:
-                UpdateCombatBehavior();
+            case Boss1States.PATROLLING:
+                UpdatePatrolBehavior();
+                break;
+            case Boss1States.MOVING_TOWARD_SIGMA:
+                UpdateMoveTowardSigmaBehavior();
+                break;
+            case Boss1States.STOMP_ATTACK:
+                // should be empty - behavior invoked while in MOVING_TOWARD_SIGMA state
                 break;
             case Boss1States.CHARGE_ATTACK:
-                UpdateChargeBehavior();
+                // should be empty - behavior handled via coroutine
                 break;
             case Boss1States.INJURED:
-                UpdateInjuredBehavior();
+                // should be empty - behavior handled via coroutine
+                break;
+            default:
                 break;
         }
-    }
-
-    void UpdateInactiveBehavior()
-    {
-        if (Vector2.Distance(transform.position, sigmaTransform.position) < activationRange)
-            currentState = Boss1States.COMBAT;
-    }
-
-    void UpdateCombatBehavior()
-    {
-        if (sigmaTransform.position.y > (transform.position.y + verticalReach))
-        {
-            UpdatePatrol();
-            if (canAttack) StartCoroutine(AttackRandomly(Attacks.STOMP));
-            StopCoroutine(AttackRandomly(Attacks.PUNCH));
-            StopCoroutine(AttackRandomly(Attacks.CHARGE));
-        }
-        else if (sigmaTransform.position.y < (transform.position.y - verticalReach))
-        {
-            UpdatePatrol();
-            StopCoroutine(AttackRandomly(Attacks.PUNCH));
-            StopCoroutine(AttackRandomly(Attacks.STOMP));
-            StopCoroutine(AttackRandomly(Attacks.CHARGE));
-        }
-        else
-        {
-            if (sigmaTransform.position.x < transform.position.x) myRenderer.flipX = false;
-            else myRenderer.flipX = true;
-
-            if (!charging) myRigidbody.MovePosition(transform.position + (myRenderer.flipX ? transform.right : -transform.right) * speed * Time.deltaTime); // placeholder
-
-            if (canAttack) StartCoroutine(AttackRandomly((Attacks)Random.Range(0, 3)));
-
-            // move toward sigma if sigma is too far away, otherwise keep sigma in range of punch attacks
-            // stomp every once in a while if sigma is not quite in range of punch
-            // punch every once in a while
-            // charge every once in a longer while
-        }
-    }
-
-    void UpdateChargeBehavior()
-    {
-        if (charging) StartCoroutine(Charge());
-    }
-
-    void UpdateInjuredBehavior()
-    {
-        // should probably stay empty, since mega man can't do anything while injured and the timer was started in OnCollisionEnter2D
-    }
-
-    void UpdatePatrol()
-    {
-        if (Vector2.Distance(transform.position, targetPos) < 3)
-            targetPos = (targetPos == navPointLeft.position ? navPointRight.position : navPointLeft.position);
-
-        myRenderer.flipX = (targetPos == navPointLeft.position ? false : true);
-        myRigidbody.MovePosition(transform.position + (targetPos == navPointLeft.position ? -transform.right : transform.right) * speed * Time.deltaTime); // placeholder
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -139,11 +92,11 @@ public class Boss1 : MonoBehaviour
             case "Player":
                 if (currentState == Boss1States.CHARGE_ATTACK)
                 {
-                    StartCoroutine(GoBackToCombatState());
+                    collision.gameObject.GetComponent<IDamageable>().TakeDamage(30);
+                    myRenderer.color = originalRendererColor;
+                    currentState = Boss1States.PATROLLING;
                 }
-                break;
-            case "Bullet":
-                // play injured anim, but no health stuff for right now - that will be handled with a variant of the existing enemy health script
+                else collision.gameObject.GetComponent<IDamageable>().TakeDamage(10);
                 break;
             case "Boss1Wall":
                 if (currentState == Boss1States.CHARGE_ATTACK)
@@ -156,18 +109,83 @@ public class Boss1 : MonoBehaviour
         }
     }
 
-    IEnumerator AttackRandomly(Attacks attackType)
+    void UpdateInactiveBehavior()
+    {
+        if (Vector2.Distance(transform.position, sigmaTransform.position) < activationRange)
+            currentState = Boss1States.PATROLLING;
+    }
+
+    void UpdatePatrolBehavior()
+    {
+        // give up on attacking if sigma is out of reach
+        StopCoroutine(WaitToAttack(Attacks.STOMP));
+        StopCoroutine(WaitToAttack(Attacks.CHARGE));
+
+        // switch patrol points if close to one
+        if (Vector2.Distance(transform.position, targetPos) < 3)
+            targetPos = (targetPos == navPointLeft.position ? navPointRight.position : navPointLeft.position);
+
+        // move back and forth between patrol points
+        myRenderer.flipX = (targetPos == navPointLeft.position ? false : true);
+        myRigidbody.MovePosition(transform.position + (targetPos == navPointLeft.position ? -transform.right : transform.right) * speed * Time.deltaTime); // placeholder
+
+        #region change state if sigma is in reach
+        // sigma is in reach if he is not higher or lower than the boss's vertical reach
+        bool sigmaIsInReach = !(sigmaTransform.position.y > (transform.position.y + verticalReach)) &&
+            !(sigmaTransform.position.y < (transform.position.y - verticalReach));
+
+        if (sigmaIsInReach) currentState = Boss1States.MOVING_TOWARD_SIGMA;
+        #endregion
+    }
+
+    void UpdateMoveTowardSigmaBehavior()
+    {
+        // face sigma
+        if (sigmaTransform.position.x < transform.position.x) myRenderer.flipX = false;
+        else myRenderer.flipX = true;
+
+        // move toward sigma
+        myRigidbody.MovePosition(transform.position + 
+            (myRenderer.flipX ? transform.right : -transform.right) * speed * Time.deltaTime);
+
+        // attack periodically
+        if (canAttack) StartCoroutine(WaitToAttack((Attacks)Random.Range(0, 2)));
+
+        #region change state if sigma is out of reach
+        // sigma is out of reach if he is higher or lower than the boss's vertical reach
+        bool sigmaIsOutOfReach = sigmaTransform.position.y > (transform.position.y + verticalReach) ||
+            sigmaTransform.position.y < (transform.position.y - verticalReach);
+
+        if (sigmaIsOutOfReach) currentState = Boss1States.PATROLLING;
+        #endregion
+    }
+
+    IEnumerator WaitToAttack(Attacks attackType)
     {
         canAttack = false;
 
         switch (attackType)
         {
-            case Attacks.PUNCH:
-                break;
             case Attacks.STOMP:
-
                 yield return new WaitForSeconds(Random.Range(stompFrequencyMin + 0f, stompFrequencyMax + 1f));
+                StartCoroutine(Attack(Attacks.STOMP));
+                break;
+            case Attacks.CHARGE:
+                yield return new WaitForSeconds(Random.Range(chargeFrequencyMin + 0f, chargeFrequencyMax + 1f));
+                StartCoroutine(Attack(Attacks.CHARGE));
+                break;
+        }
 
+        canAttack = true;
+    }
+
+    IEnumerator Attack(Attacks attackType)
+    {
+        switch (attackType)
+        {
+            case Attacks.STOMP:
+                currentState = Boss1States.STOMP_ATTACK;
+                #region stomp
                 myRigidbody.AddForce(Vector2.up * stompForce);
                 if (OnBoss1Stomp != null) OnBoss1Stomp();
 
@@ -183,52 +201,41 @@ public class Boss1 : MonoBehaviour
                 }
                 blastWave.transform.localScale = originalBlastWaveScale;
                 blastWave.SetActive(false);
-
+                #endregion
+                currentState = Boss1States.PATROLLING;
                 break;
             case Attacks.CHARGE:
-                yield return new WaitForSeconds(Random.Range(chargeFrequencyMin + 0f, chargeFrequencyMax + 1f));
                 currentState = Boss1States.CHARGE_ATTACK;
-                charging = true;
+                #region charge
+                myRigidbody.velocity = Vector2.zero;
+                myRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+                elapsedTime = 0;
+                float timer = 3;
+                while (elapsedTime < timer)
+                {
+                    myRenderer.color = Color.Lerp(originalRendererColor, Color.red, elapsedTime / timer);
+
+                    elapsedTime += Time.deltaTime;
+                    yield return new WaitForEndOfFrame();
+                }
+
+                myRigidbody.AddForce((myRenderer.flipX ? Vector2.right : Vector2.left) * 20000);
+                #endregion
                 break;
         }
-
-        canAttack = true;
-    }
-
-    IEnumerator Charge()
-    {
-        charging = false;
-
-        StopCoroutine(AttackRandomly(Attacks.PUNCH));
-        StopCoroutine(AttackRandomly(Attacks.STOMP));
-        StopCoroutine(AttackRandomly(Attacks.CHARGE));
-
-        myRigidbody.velocity = Vector2.zero;
-        myRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-        float elapsedTime = 0;
-        float timer = 3;
-        while (elapsedTime < timer)
-        {
-            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / timer);
-
-            elapsedTime += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
-        }
-
-        myRigidbody.AddForce((myRenderer.flipX ? Vector2.right : Vector2.left) * 20000);
     }
 
     IEnumerator InjurySequence()
     {
         weakSpot.SetActive(true);
-        myRigidbody.velocity = Vector2.zero;
+        myRigidbody.isKinematic = true;
 
         #region blink red
         float elapsedTime = 0;
         while (elapsedTime < (injuredTimer / 10))
         {
-            myRenderer.color = Color.Lerp(Color.red, originalColor, elapsedTime / (injuredTimer / 10));
+            myRenderer.color = Color.Lerp(Color.red, originalRendererColor, elapsedTime / (injuredTimer / 10));
 
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
@@ -236,7 +243,7 @@ public class Boss1 : MonoBehaviour
         elapsedTime = 0;
         while (elapsedTime < (injuredTimer / 10))
         {
-            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / (injuredTimer / 10));
+            myRenderer.color = Color.Lerp(originalRendererColor, Color.red, elapsedTime / (injuredTimer / 10));
 
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
@@ -244,7 +251,7 @@ public class Boss1 : MonoBehaviour
         elapsedTime = 0;
         while (elapsedTime < (injuredTimer / 10))
         {
-            myRenderer.color = Color.Lerp(Color.red, originalColor, elapsedTime / (injuredTimer / 10));
+            myRenderer.color = Color.Lerp(Color.red, originalRendererColor, elapsedTime / (injuredTimer / 10));
 
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
@@ -252,7 +259,7 @@ public class Boss1 : MonoBehaviour
         elapsedTime = 0;
         while (elapsedTime < (injuredTimer / 10))
         {
-            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / (injuredTimer / 10));
+            myRenderer.color = Color.Lerp(originalRendererColor, Color.red, elapsedTime / (injuredTimer / 10));
 
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
@@ -260,7 +267,7 @@ public class Boss1 : MonoBehaviour
         elapsedTime = 0;
         while (elapsedTime < (injuredTimer / 10))
         {
-            myRenderer.color = Color.Lerp(Color.red, originalColor, elapsedTime / (injuredTimer / 10));
+            myRenderer.color = Color.Lerp(Color.red, originalRendererColor, elapsedTime / (injuredTimer / 10));
 
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
@@ -268,7 +275,7 @@ public class Boss1 : MonoBehaviour
         elapsedTime = 0;
         while (elapsedTime < (injuredTimer / 10))
         {
-            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / (injuredTimer / 10));
+            myRenderer.color = Color.Lerp(originalRendererColor, Color.red, elapsedTime / (injuredTimer / 10));
 
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
@@ -276,7 +283,7 @@ public class Boss1 : MonoBehaviour
         elapsedTime = 0;
         while (elapsedTime < (injuredTimer / 10))
         {
-            myRenderer.color = Color.Lerp(Color.red, originalColor, elapsedTime / (injuredTimer / 10));
+            myRenderer.color = Color.Lerp(Color.red, originalRendererColor, elapsedTime / (injuredTimer / 10));
 
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
@@ -284,7 +291,7 @@ public class Boss1 : MonoBehaviour
         elapsedTime = 0;
         while (elapsedTime < (injuredTimer / 10))
         {
-            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / (injuredTimer / 10));
+            myRenderer.color = Color.Lerp(originalRendererColor, Color.red, elapsedTime / (injuredTimer / 10));
 
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
@@ -292,7 +299,7 @@ public class Boss1 : MonoBehaviour
         elapsedTime = 0;
         while (elapsedTime < (injuredTimer / 10))
         {
-            myRenderer.color = Color.Lerp(Color.red, originalColor, elapsedTime / (injuredTimer / 10));
+            myRenderer.color = Color.Lerp(Color.red, originalRendererColor, elapsedTime / (injuredTimer / 10));
 
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
@@ -300,7 +307,7 @@ public class Boss1 : MonoBehaviour
         elapsedTime = 0;
         while (elapsedTime < (injuredTimer / 10))
         {
-            myRenderer.color = Color.Lerp(originalColor, Color.red, elapsedTime / (injuredTimer / 10));
+            myRenderer.color = Color.Lerp(originalRendererColor, Color.red, elapsedTime / (injuredTimer / 10));
 
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
@@ -308,31 +315,23 @@ public class Boss1 : MonoBehaviour
         elapsedTime = 0;
         while (elapsedTime < (injuredTimer / 10))
         {
-            myRenderer.color = Color.Lerp(Color.red, originalColor, elapsedTime / (injuredTimer / 10));
+            myRenderer.color = Color.Lerp(Color.red, originalRendererColor, elapsedTime / (injuredTimer / 10));
 
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+        myRenderer.color = originalRendererColor;
         #endregion
 
         weakSpot.SetActive(false);
-        myRigidbody.constraints = RigidbodyConstraints2D.None;
+        myRigidbody.isKinematic = false;
 
-        currentState = Boss1States.COMBAT;
-    }
-
-    IEnumerator GoBackToCombatState()
-    {
-        yield return new WaitForSeconds(injuredTimer);
-
-        myRenderer.color = originalColor;
-        myRigidbody.constraints = RigidbodyConstraints2D.None;
-
-        currentState = Boss1States.COMBAT;
+        currentState = Boss1States.PATROLLING;
     }
 
     public IEnumerator DeathSequence()
     {
+        // TODO: play death animation
         yield return new WaitForSeconds(deathTimer);
         GameStateManager.won = true;
     }
