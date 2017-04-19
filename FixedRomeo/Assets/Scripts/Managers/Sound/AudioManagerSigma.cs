@@ -2,8 +2,11 @@
 using System.Collections;
 using UnityStandardAssets._2D;
 
+// all code by CH unless otherwise noted
+
 //So that way any script this Audio Manager is attached to will have an AudioSource with it
 [RequireComponent(typeof(AudioSource))]
+
 public class AudioManagerSigma : MonoBehaviour
 {
     [SerializeField]
@@ -15,14 +18,12 @@ public class AudioManagerSigma : MonoBehaviour
     private AudioSource shootingAudioSource;
 
     private PlatformerCharacter2D movementData;
-
-	// Use this for initialization
+    
 	void Start ()
     {
         movementData = GetComponent<PlatformerCharacter2D>();
 	}
 	
-	// Update is called once per frame
 	void Update ()
     {
         if (Input.GetButtonDown("Jump") && (movementData.ReturnIsOnWall() || movementData.ReturnIsOnGround()))

@@ -2,8 +2,11 @@
 using System.Collections;
 using UnityEngine.UI;
 
-//CUTSCENE MANAGER GOES ON CUTSCENE PANEL
+// CUTSCENE MANAGER GOES ON CUTSCENE PANEL
+// all code by CH unless otherwise noted
+
 [RequireComponent(typeof(AudioSource))]
+
 public class Cutscene : MonoBehaviour
 {
     [SerializeField]
@@ -26,7 +29,7 @@ public class Cutscene : MonoBehaviour
     private WaitForSeconds cutsceneFadeOutInterval;
     private Image canvasImage;
     private AudioSource charBlipAudio;
-    private bool canContinue = false, polish;
+    private bool canContinue = false;
 
     void Awake()
     {
@@ -87,12 +90,9 @@ public class Cutscene : MonoBehaviour
 
     private void SpeedThroughAndDisableCutscene()
     {
-        if (Input.GetButtonDown("Polish")) polish = true;
-
         if (Input.GetButtonDown("Jump") && canContinue)
         {
             StartCoroutine(DisableCutscene());
-            if (polish) FindObjectOfType<DaneTemp_Cutscene>().PlayAdamLines();
         }
 
         if (Input.GetButtonDown("Jump") && !canContinue)

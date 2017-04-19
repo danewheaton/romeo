@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnterBossFight : MonoBehaviour {
+// all code by CK unless otherwise noted
 
+public class EnterBossFight : MonoBehaviour
+{
     [SerializeField]
     GameObject Slider;
 
@@ -15,6 +17,5 @@ public class EnterBossFight : MonoBehaviour {
     { 
         if (other.gameObject.tag == "Player")
         Slider.SetActive(true);
-
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
 
+// all code by CH unless otherwise noted
+
 public class LevelSelectManager : MonoBehaviour
 {
     [SerializeField]
@@ -28,12 +30,6 @@ public class LevelSelectManager : MonoBehaviour
     {
         canClick = true;
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-	
-	}
 
     public void LoadScene(string levelToLoad)
     {

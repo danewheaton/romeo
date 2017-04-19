@@ -2,16 +2,21 @@
 using System.Collections;
 using UnityEngine.UI;
 
-// IF THE BOSS'S HEALTH RESETS BACK TO 100% AFTER HE RECOVERS, IT'S BECAUSE OF SETACTIVE(TRUE/FALSE)
+// all code by CK unless otherwise noted
 
 public class BossHealth : MonoBehaviour, IDamageable
 {
-    [SerializeField]
-    public Slider HealthSlider;
-    [SerializeField] Boss1 boss1;
-    [SerializeField] int health = 10;
+    public delegate void Death();
+    public static event Death OnDeath;
 
-    bool dead = false;
+    [SerializeField]
+    Slider HealthSlider;
+
+    [SerializeField]
+    int health = 10;
+
+    bool dead;
+
     void Start ()
     {
         HealthSlider.value = health;
@@ -31,6 +36,6 @@ public class BossHealth : MonoBehaviour, IDamageable
     public void Die()
     {
         dead = true;
-        StartCoroutine(boss1.DeathSequence());
+        if (OnDeath != null) OnDeath();
     }
 }

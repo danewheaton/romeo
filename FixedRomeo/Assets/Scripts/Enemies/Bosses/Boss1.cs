@@ -41,6 +41,15 @@ public class Boss1 : MonoBehaviour
     Vector3 targetPos, originalBlastWaveScale;
     bool canAttack = true;
 
+    private void OnEnable()
+    {
+        BossHealth.OnDeath += CallDeathSequence;
+    }
+    private void OnDisable()
+    {
+        BossHealth.OnDeath -= CallDeathSequence;
+    }
+
     void Start ()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -327,6 +336,11 @@ public class Boss1 : MonoBehaviour
         myRigidbody.isKinematic = false;
 
         currentState = Boss1States.PATROLLING;
+    }
+
+    void CallDeathSequence()
+    {
+        StartCoroutine(DeathSequence());
     }
 
     public IEnumerator DeathSequence()

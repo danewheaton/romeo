@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class SigmaTriggers : MonoBehaviour
+// all code by DW unless otherwise noted
+
+public class PlayerCheckpoints : MonoBehaviour
 {
     #region events
     public delegate void EnterArena();
@@ -10,13 +11,22 @@ public class SigmaTriggers : MonoBehaviour
     public delegate void ReachCheckpoint(Transform checkpoint);
     public static event ReachCheckpoint OnReachedCheckpoint;
     #endregion
-    [SerializeField]
-    GameObject Player;
-    [SerializeField] Transform mostRecentCheckpoint;
+    
     [SerializeField]
     GameObject[] fallingPlatforms;
 
+    Transform mostRecentCheckpoint;
+
     Vector3[] platformOriginalPositions, platformOriginalEulers;
+
+    private void OnEnable()
+    {
+        PlayerHealth.OnDeath += RestartFromCheckpoint;
+    }
+    private void OnDisable()
+    {
+        PlayerHealth.OnDeath -= RestartFromCheckpoint;
+    }
 
     void Start()
     {
@@ -44,10 +54,9 @@ public class SigmaTriggers : MonoBehaviour
         }
     }
 
-
-    public void PlayerDeath ()
+    public void RestartFromCheckpoint()
     {
-        Player.transform.position = mostRecentCheckpoint.position;
+        transform.position = mostRecentCheckpoint.position;
         for (int i = 0; i < fallingPlatforms.Length; i++)
         {
             fallingPlatforms[i].transform.position = platformOriginalPositions[i];
@@ -55,5 +64,4 @@ public class SigmaTriggers : MonoBehaviour
             fallingPlatforms[i].GetComponent<Rigidbody2D>().isKinematic = true;
         }
     }
-   
 }

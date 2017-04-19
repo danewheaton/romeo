@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// all code by DW unless otherwise noted
+
 public class Spawner : MonoBehaviour
 {
 	[SerializeField] float spawnDelayMin = 1, spawnDelayMax = 3;
@@ -12,11 +14,11 @@ public class Spawner : MonoBehaviour
 
     private void OnEnable()
     {
-        SigmaTriggers.OnReachedCheckpoint += GetLatestCheckpointReached;
+        PlayerCheckpoints.OnReachedCheckpoint += GetLatestCheckpointReached;
     }
     private void OnDisable()
     {
-        SigmaTriggers.OnReachedCheckpoint -= GetLatestCheckpointReached;
+        PlayerCheckpoints.OnReachedCheckpoint -= GetLatestCheckpointReached;
     }
 
     void Start ()

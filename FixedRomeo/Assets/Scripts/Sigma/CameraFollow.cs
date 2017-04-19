@@ -2,6 +2,8 @@
 using UnityStandardAssets._2D;
 using System.Collections;
 
+// all code by DW unless otherwise noted
+
 public class CameraFollow : MonoBehaviour 
 {
     [SerializeField] float
@@ -20,12 +22,12 @@ public class CameraFollow : MonoBehaviour
     void OnEnable()
     {
         Boss1.OnBoss1Stomp += CallShakeCamera;
-        SigmaTriggers.OnEnterArena += CallZoomOut;
+        PlayerCheckpoints.OnEnterArena += CallZoomOut;
     }
     void OnDisable()
     {
         Boss1.OnBoss1Stomp -= CallShakeCamera;
-        SigmaTriggers.OnEnterArena -= CallZoomOut;
+        PlayerCheckpoints.OnEnterArena -= CallZoomOut;
     }
 
     void Start()

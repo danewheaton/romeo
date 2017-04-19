@@ -2,11 +2,13 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
+// all code by DW unless otherwise noted
+
 public enum GameStates { TITLE_MENU, GAMEPLAY }
 
 public class GameStateManager : MonoBehaviour
 {
-    public static bool won; // COREY: when the boss is dead, set this to true      OK
+    public static bool won;
 
     static GameStateManager instance = null;
     public static GameStateManager Instance

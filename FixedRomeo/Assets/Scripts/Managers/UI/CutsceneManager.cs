@@ -3,6 +3,8 @@ using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
 
+// all code by CH unless otherwise noted
+
 public enum Language { English, Spanish, Polish }
 
 public class CutsceneManager : MonoBehaviour

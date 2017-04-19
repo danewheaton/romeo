@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// all code by DW unless otherwise noted
+
 public class EndScene : MonoBehaviour
 {
     [SerializeField]

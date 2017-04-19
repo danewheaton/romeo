@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// all code by DW unless otherwise noted
+
 public class VFXManager : MonoBehaviour
 {
-    [SerializeField] SpriteRenderer backgroundRenderer;
-    [SerializeField] float colorChangeSpeed = 1;
+    [SerializeField]
+    SpriteRenderer backgroundRenderer;
+
+    [SerializeField]
+    float colorChangeSpeed = 1;
 
     Color randomColor1, randomColor2;
 

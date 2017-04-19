@@ -1,57 +1,102 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class PlayerHealth : MonoBehaviour
-{	
-	public float health = 100f, repeatDamagePeriod = 2f, hurtForce = 10f, damageAmount = 10f;
-	public AudioClip[] ouchClips;
- 
-	SpriteRenderer healthBar;
-	Vector3 healthScale;
-	Animator anim;
+// all code by CK unless otherwise noted
+
+public class PlayerHealth : MonoBehaviour, IDamageable
+{
+    #region events - DW
+    public delegate void Death();
+    public static event Death OnDeath;
+    #endregion
+
+    [SerializeField]
+    Slider HealthSlider;
+
+    [SerializeField]
+    Image panel;
+
+    [SerializeField]
+    float health = 100, repeatDamagePeriod = 2f, hurtForce = 10f, damageAmount = 10f, screenFlashOnDamageTime = .15f;
 
     float lastHitTime;
+    
+    void Start()
+    {
+        HealthSlider.value = health;
+    }
+    
+    void Update()
+    {
+        HealthSlider.value = health;
+    }
 
-	void OnCollisionEnter2D (Collision2D col)
-	{
-		if(col.gameObject.tag == "Enemy" || col.gameObject.tag == "Boss")
-		{
-			if (Time.time > lastHitTime + repeatDamagePeriod) // if past cool-down time
-			{
-				if(health > 0f)
-				{
-					TakeDamage(col.transform); 
-					lastHitTime = Time.time; 
-				}
-				else
-				{
-                    #region this makes Sigma fall through the map - placeholder effect
-                    Collider2D[] cols = GetComponents<Collider2D>();
-					foreach(Collider2D c in cols) c.isTrigger = true;
-                    
-					SpriteRenderer[] spr = GetComponentsInChildren<SpriteRenderer>();
-					foreach(SpriteRenderer s in spr) s.sortingLayerName = "UI";
-                    #endregion
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
 
-                    GetComponent<PlayerControl>().enabled = false;
-					GetComponentInChildren<Gun>().enabled = false;
-					anim.SetTrigger("Die");
-				}
-			}
-		}
-	}
+        #region DW
+        GetComponent<SpriteRenderer>().color = Color.red;
+        panel.gameObject.SetActive(true);
+        Invoke("ChangeSpriteColorBack", screenFlashOnDamageTime);
+        #endregion
+    }
 
+    void ChangeSpriteColorBack()    // DW
+    {
+        panel.gameObject.SetActive(false);
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
 
-	void TakeDamage (Transform enemy)   // TODO: why isn't the health logic here? move it out of UIManager plz
-	{
-		// create a vector that's from the enemy to the player with an upwards boost
-		Vector3 hurtVector = transform.position - enemy.position + Vector3.up * 5f;
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            if (Time.time > lastHitTime + repeatDamagePeriod) // if past cool-down time
+            {
+                if (health > 0f)
+                {
+                    TakeDamage(10);
+                    lastHitTime = Time.time - 1f;
+                }
 
-		// add a force to the player in the direction of the vector and multiply by the hurtForce
-		GetComponent<Rigidbody2D>().AddForce(hurtVector * hurtForce);
-        
-		int i = Random.Range (0, ouchClips.Length);
-		AudioSource.PlayClipAtPoint(ouchClips[i], transform.position);
-	}
+                if (health <= 0f)
+                {
+                    Die();
+                }
+            }
+        }
 
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Killzone")
+        {
+            Die();
+        }
+        else if (col.gameObject.tag == "Enemy")
+        {
+            if (Time.time > lastHitTime + repeatDamagePeriod) // if past cool-down time
+            {
+
+                if (health > 0f)
+                {
+                    TakeDamage(10);
+                    lastHitTime = Time.time - 1f;
+                }
+
+                if (health <= 0f)
+                {
+                    Die();
+                }
+            }
+        }
+    }
+
+    public void Die()
+    {
+        if (OnDeath != null) OnDeath(); // DW
+        health = 100f;
+    }
 }

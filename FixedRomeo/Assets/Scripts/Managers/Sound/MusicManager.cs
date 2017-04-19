@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// all code by CH unless otherwise noted
+
 //This manager is attached on the trigger used to switch the music!
 [RequireComponent(typeof(AudioSource))]
 
@@ -8,6 +10,7 @@ public class MusicManager : MonoBehaviour
 {
     [SerializeField]
     private AudioClip bossTheme;
+
     [SerializeField]
     private AudioClip stageTheme;
 
@@ -15,11 +18,11 @@ public class MusicManager : MonoBehaviour
 
     private void OnEnable()
     {
-        SigmaTriggers.OnEnterArena += PlayBossMusic;
+        PlayerCheckpoints.OnEnterArena += PlayBossMusic;
     }
     private void OnDisable()
     {
-        SigmaTriggers.OnEnterArena -= PlayBossMusic;
+        PlayerCheckpoints.OnEnterArena -= PlayBossMusic;
     }
     
     void Start ()
