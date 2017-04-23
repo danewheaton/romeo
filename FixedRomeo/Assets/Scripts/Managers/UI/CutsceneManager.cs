@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public enum Language { English, Spanish, Polish }
 
+[RequireComponent(typeof(AudioSource))]
 public class CutsceneManager : MonoBehaviour
 {
     [SerializeField]
@@ -14,9 +15,15 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField]
     private string[] cutsceneStringsEnglish;
     [SerializeField]
+    private AudioClip[] cutsceneVOEnglish;
+    [SerializeField]
     private string[] cutsceneStringsSpanish;
     [SerializeField]
+    private AudioClip[] cutsceneVOSpanish;
+    [SerializeField]
     private string[] cutsceneStringsPolish;
+    [SerializeField]
+    private AudioClip[] cutsceneVOPolish;
     [SerializeField]
     private string nextScene;
     [SerializeField]
@@ -26,11 +33,14 @@ public class CutsceneManager : MonoBehaviour
 
     private int currentCutscene = 0;
     private bool languageSelected = false;
+    private AudioSource VoiceOverSource;
+    private AudioClip[] VoiceOverClips;
 
 
 	// Use this for initialization
 	void Start ()
     {
+        VoiceOverSource = GetComponent<AudioSource>();
         //PlayNextCutscene();
 	}
 	
@@ -57,6 +67,7 @@ public class CutsceneManager : MonoBehaviour
                 break;
             case Language.Polish:
                 cutscenes[currentCutscene].SetCutsceneString(cutsceneStringsPolish[currentCutscene]);
+                VoiceOverClips = cutsceneVOPolish;
                 break;
             default:
                 cutscenes[currentCutscene].SetCutsceneString(cutsceneStringsEnglish[currentCutscene]);
@@ -72,6 +83,8 @@ public class CutsceneManager : MonoBehaviour
             {
                 SetCutsceneStringsBasedOnLanguage();
                 cutscenes[currentCutscene].DisplayText();
+                VoiceOverSource.clip = VoiceOverClips[currentCutscene];
+                VoiceOverSource.Play();
                 currentCutscene++;
             }
             else
