@@ -22,6 +22,14 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     float lastHitTime;
     
+    public float Health //CH, for use with HealthPickup
+    {
+        get
+        {
+            return health;
+        }
+    }
+
     void Start()
     {
         HealthSlider.value = health;
