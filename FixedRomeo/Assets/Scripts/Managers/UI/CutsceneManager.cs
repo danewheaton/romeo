@@ -61,9 +61,11 @@ public class CutsceneManager : MonoBehaviour
         {
             case Language.English:
                 cutscenes[currentCutscene].SetCutsceneString(cutsceneStringsEnglish[currentCutscene]);
+                VoiceOverClips = cutsceneVOEnglish;
                 break;
             case Language.Spanish:
                 cutscenes[currentCutscene].SetCutsceneString(cutsceneStringsSpanish[currentCutscene]);
+                VoiceOverClips = cutsceneVOSpanish;
                 break;
             case Language.Polish:
                 cutscenes[currentCutscene].SetCutsceneString(cutsceneStringsPolish[currentCutscene]);
