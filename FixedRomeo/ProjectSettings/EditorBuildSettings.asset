@@ -10,7 +10,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartScene.unity
   - enabled: 1
-    path: Assets/Scenes/MovieTextureCutsceneScene.unity
+    path: Assets/Scenes/MovieTextureCutsceneSceneFOREAL.unity
   - enabled: 1
     path: Assets/Scenes/CutsceneScene.unity
   - enabled: 1
