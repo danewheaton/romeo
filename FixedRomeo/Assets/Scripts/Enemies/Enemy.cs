@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour, IDamageable
 	{
         myRigidbody = GetComponent<Rigidbody2D>();
 		frontCheck = transform.Find("frontCheck").transform;
+
+        Flip();
 	}
 
 	void FixedUpdate ()

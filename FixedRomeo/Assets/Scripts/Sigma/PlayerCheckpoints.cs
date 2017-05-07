@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 // all code by DW unless otherwise noted
@@ -15,9 +16,13 @@ public class PlayerCheckpoints : MonoBehaviour
     [SerializeField]
     GameObject[] fallingPlatforms;
 
-    Transform mostRecentCheckpoint;
-
     Vector3[] platformOriginalPositions, platformOriginalEulers;
+
+    private void OnLevelWasLoaded(int level)
+    {
+        if (CheckpointManager.latestCheckpoint != null)
+            transform.position = CheckpointManager.latestCheckpoint.position;
+    }
 
     private void OnEnable()
     {
@@ -48,8 +53,8 @@ public class PlayerCheckpoints : MonoBehaviour
         switch (collider.tag)
         {
             case "Checkpoint":
-                mostRecentCheckpoint = collider.transform;
-                if (OnReachedCheckpoint != null) OnReachedCheckpoint(mostRecentCheckpoint);
+                CheckpointManager.latestCheckpoint = collider.transform;
+                if (OnReachedCheckpoint != null) OnReachedCheckpoint(CheckpointManager.latestCheckpoint);
                 break;
             case "BossArena":
                 if (OnEnterArena != null) OnEnterArena();
@@ -59,7 +64,7 @@ public class PlayerCheckpoints : MonoBehaviour
 
     public void RestartFromCheckpoint()
     {
-        transform.position = mostRecentCheckpoint.position;
+        transform.position = CheckpointManager.latestCheckpoint.position;
 
         if (fallingPlatforms != null)
         {

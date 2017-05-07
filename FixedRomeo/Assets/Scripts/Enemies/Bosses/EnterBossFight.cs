@@ -8,6 +8,12 @@ public class EnterBossFight : MonoBehaviour
     [SerializeField]
     GameObject Slider;
 
+    [SerializeField]
+    AudioSource music;
+
+    [SerializeField]
+    AudioClip bossTheme;
+
     void Awake ()
     {
         Slider.SetActive(false);
@@ -17,5 +23,7 @@ public class EnterBossFight : MonoBehaviour
     { 
         if (other.gameObject.tag == "Player")
         Slider.SetActive(true);
+        music.clip = bossTheme;
+        music.Play();
     }
 }
