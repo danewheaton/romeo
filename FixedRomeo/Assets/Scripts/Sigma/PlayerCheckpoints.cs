@@ -30,13 +30,16 @@ public class PlayerCheckpoints : MonoBehaviour
 
     void Start()
     {
-        platformOriginalPositions = new Vector3[fallingPlatforms.Length];
-        platformOriginalEulers = new Vector3[fallingPlatforms.Length];
-
-        for (int i = 0; i < fallingPlatforms.Length; i++)
+        if (fallingPlatforms != null)
         {
-            platformOriginalPositions[i] = fallingPlatforms[i].transform.position;
-            platformOriginalEulers[i] = fallingPlatforms[i].transform.eulerAngles;
+            platformOriginalPositions = new Vector3[fallingPlatforms.Length];
+            platformOriginalEulers = new Vector3[fallingPlatforms.Length];
+
+            for (int i = 0; i < fallingPlatforms.Length; i++)
+            {
+                platformOriginalPositions[i] = fallingPlatforms[i].transform.position;
+                platformOriginalEulers[i] = fallingPlatforms[i].transform.eulerAngles;
+            }
         }
     }
 
@@ -57,11 +60,15 @@ public class PlayerCheckpoints : MonoBehaviour
     public void RestartFromCheckpoint()
     {
         transform.position = mostRecentCheckpoint.position;
-        for (int i = 0; i < fallingPlatforms.Length; i++)
+
+        if (fallingPlatforms != null)
         {
-            fallingPlatforms[i].transform.position = platformOriginalPositions[i];
-            fallingPlatforms[i].transform.eulerAngles = platformOriginalEulers[i];
-            fallingPlatforms[i].GetComponent<Rigidbody2D>().isKinematic = true;
+            for (int i = 0; i < fallingPlatforms.Length; i++)
+            {
+                fallingPlatforms[i].transform.position = platformOriginalPositions[i];
+                fallingPlatforms[i].transform.eulerAngles = platformOriginalEulers[i];
+                fallingPlatforms[i].GetComponent<Rigidbody2D>().isKinematic = true;
+            }
         }
     }
 }
